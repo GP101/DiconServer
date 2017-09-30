@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="References">
+      <UniqueIdentifier>{83d9bb56-b813-44cf-91bf-a92fea373455}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EnumToString.h">
+      <Filter>References</Filter>
+    </ClInclude>
+    <ClInclude Include="KFsm.h">
+      <Filter>References</Filter>
+    </ClInclude>
+    <ClInclude Include="KGlobalSingleton.h">
+      <Filter>References</Filter>
+    </ClInclude>
+    <ClInclude Include="KGen.h">
+      <Filter>References</Filter>
+    </ClInclude>
+    <ClInclude Include="KPool.h">
+      <Filter>References</Filter>
+    </ClInclude>
+    <ClInclude Include="KBaseSingleton.h">
+      <Filter>References</Filter>
+    </ClInclude>
+    <ClInclude Include="KCriticalSection.h">
+      <Filter>References</Filter>
+    </ClInclude>
+    <ClInclude Include="KLog.h">
+      <Filter>References</Filter>
+    </ClInclude>
+    <ClInclude Include="KGlobalSingletonNotGood.h">
+      <Filter>References</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="boostTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_packet serialization01.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_serialization.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_CriticalSection RAII.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_typeid_RTTI.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_session02.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_bind01.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_session01.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_KPool test.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_CreateInstance01.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_CreateInstance02.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_KGlobalSingleton.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
