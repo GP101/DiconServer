@@ -1,6 +1,6 @@
 /** @file   EnumToString.h
     @desc   macros of EnumToString
-    @author jintaeks@kogstudios.com
+    @author jintaeks@gmail.com
     @since  2012-6-22, 13:24
 */
 #pragma once
@@ -118,8 +118,7 @@
     class KTestPacket
     {
     public:
-        DECLARE_ENUM
-        (
+        DECLARE_ENUM( EUserState,
             INVALID,
             SUCCESS,
             ERROR_DB_FAILED,
@@ -146,9 +145,9 @@
         std::cout << KTestPacket::INVALID << std::endl;
         std::cout << KTestPacket::SUCCESS << std::endl;
         std::cout << KTestPacket::ERROR_PARAMETER << std::endl;
-        std::cout << KTestPacket::EnumToString( KTestPacket::INVALID ) << std::endl;
-        std::cout << KTestPacket::EnumToString( KTestPacket::SUCCESS ) << std::endl;
-        std::cout << KTestPacket::EnumToString( KTestPacket::ERROR_RESULT ) << std::endl;
+        std::cout << KTestPacket::EUserStateToString( KTestPacket::INVALID ) << std::endl;
+        std::cout << KTestPacket::EUserStateToString( KTestPacket::SUCCESS ) << std::endl;
+        std::cout << KTestPacket::EUserStateToString( KTestPacket::ERROR_RESULT ) << std::endl;
 
         /// output:
         ///    0
