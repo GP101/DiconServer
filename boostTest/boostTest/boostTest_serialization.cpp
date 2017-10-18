@@ -1,40 +1,39 @@
+#include <stdio.h>
 #include <boost/archive/text_oarchive.hpp>
 #include <boost/archive/text_iarchive.hpp>
-#include <iostream>
 #include <sstream>
 
-class animal
-{
-public:
-    animal() = default;
-    animal(int legs) : legs_{ legs } {}
-    int legs() const { return legs_; }
+#pragma pack(push,1)
 
-private:
-    friend class boost::serialization::access;
+struct KData
+{
+    char    m_cData;
+    float   m_fData;
 
     template <typename Archive>
-    void serialize(Archive &ar, const unsigned int version);
-
-    int legs_;
+    void serialize( Archive& ar, const unsigned int version )
+    {
+        ar & m_cData;
+        ar & m_fData;
+    }
 };
 
-template <typename Archive>
-void animal::serialize(Archive &ar, const unsigned int version)
-{
-    ar & legs_;
-}
+#pragma pack(pop)
 
-int main()
+void main()
 {
+    KData d;
+    d.m_cData = 1;
+    d.m_fData = 2.3f;
+
     std::stringstream ss;
+    boost::archive::text_oarchive oa( ss );
+    oa << d;
 
-    boost::archive::text_oarchive oa{ ss };
-    animal a{ 4 };
-    oa << a;
+    //std::cout << ss.str() << std::endl;
 
-    boost::archive::text_iarchive ia{ ss };
-    animal a2;
-    ia >> a2;
-    std::cout << a2.legs() << '\n';
+    KData d2;
+    boost::archive::text_iarchive ia( ss );
+    ia >> d2;
+
 }

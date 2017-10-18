@@ -1,2 +1,6 @@
 *.suo
 MyServer Steps/MyServer Step01 Basic Components/MyServer.sdf
+/MyServer Steps/MyServer Step01 Basic Components/GameServer/Debug
+/boostTest/Debug
+/boostTest/*.sdf
+/boostTest/boostTest/Debug
