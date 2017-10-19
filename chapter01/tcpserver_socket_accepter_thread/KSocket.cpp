@@ -25,65 +25,6 @@ void KSocket::CloseSocket()
     }
 }
 
-bool KSocket::Connect( const char* szIp_, unsigned short usPort_ )
-{
-    //// create socket, connet and start receive
-
-    KCriticalSectionLock lock( m_csSock );
-
-    if( IsConnected() == true ) {
-        BEGIN_LOG( cwarn, L"Already Connected." )
-            << END_LOG;
-        return true;
-    }
-
-    int ret = 0;
-
-    m_sock = ::WSASocket( AF_INET, SOCK_STREAM, IPPROTO_TCP, NULL, 0, WSA_FLAG_OVERLAPPED );
-    ////                                                              ^ overlapped Io
-
-    if( m_sock == INVALID_SOCKET ) {
-        BEGIN_LOG( cerr, "error" )
-            << END_LOG;
-        return false;
-    }
-
-    char bOK = true;
-    const int nRet = ::setsockopt( m_sock, SOL_SOCKET, SO_REUSEADDR, &bOK, sizeof( char ) );
-    if( nRet == SOCKET_ERROR ) {
-        BEGIN_LOG( cerr, "error" )
-            << END_LOG;
-        return false;
-    }
-
-    if( szIp_ != nullptr )
-        SetIp( szIp_ );
-
-    if( usPort_ != 0 )
-        SetPort( usPort_ );
-
-    ret = ::connect( m_sock, ( struct sockaddr* )&m_sockaddr, sizeof( m_sockaddr ) );
-
-    if( SOCKET_ERROR == ret ) {
-        // can be caused by insufficient Tcp/ip buffer space.
-        BEGIN_LOG( cerr, "error" )
-            << END_LOG;
-
-        CloseSocket();
-        return false;
-    }
-
-    // start receiving.
-    const bool isReceiveData = ReceiveData();
-    if( isReceiveData == false ) {
-        BEGIN_LOG( cerr, L"error" )
-            << END_LOG;
-        return false;
-    }
-
-    return  true;
-}
-
 bool KSocket::ReceiveData()
 {
     KCriticalSectionLock lock( m_csSock );

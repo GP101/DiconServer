@@ -15,7 +15,6 @@ public:
     virtual             ~KSocket();
 
 public:
-    bool                Connect( const char* szIP_, unsigned short usPort_ );
     void                CloseSocket();
 
     bool                SendData( const char* szData, int iSize );
