@@ -28,11 +28,13 @@
 
 #pragma comment(lib, "ws2_32.lib")
 
+KUserPtr    g_spUser;
 
 KUserPtr CreateUser()
 {
     KUserPtr    spUser;
     spUser.reset( new KUser() );
+    g_spUser = spUser;
     return spUser;
 }
 

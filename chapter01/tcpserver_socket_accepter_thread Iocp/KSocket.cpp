@@ -243,10 +243,20 @@ bool KSocket::SendData( const char* szData_, int iSize_ )
     return true;
 }
 
-void KSocket::OnReceiveCompleted( DWORD dwTransfered )
+void KSocket::OnReceiveCompleted( DWORD dwTransferred )
 {
     BEGIN_LOG( clog, "OnReceiveCompleted" )
         << END_LOG;
+
+    if( dwTransferred == 0 ) {
+        BEGIN_LOG( cout, L"closed socket: " )
+            << LOG_NAMEVALUE( dwTransferred )
+            << END_LOG;
+        VIRTUAL OnCloseSocket();
+        return;
+    }
+
+    KSocket::ReceiveData();
 }
 
 void KSocket::OnCloseSocket()

@@ -5,11 +5,16 @@
 
 class KUser;
 typedef boost::shared_ptr<KUser> KUserPtr;
-class KUser
+class KUser : public boost::noncopyable
 {
 public:
-    KSocket*            GetKSocket() { return &m_socket; }
+    KUser() { m_pSocket = new KSocket();  }
+    ~KUser()
+    {
+        delete m_pSocket;
+    }
+    KSocket*            GetKSocket() { return m_pSocket; }
 
 private:
-    KSocket             m_socket;
+    KSocket*            m_pSocket;
 };
