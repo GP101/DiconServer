@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="d71298aa-4acd-494b-8a3a-b04626b32a79" name="UMLClassDiagram1" linkedPackageId="205865a8-b195-461e-a9e5-5771440193f6" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="9db5801e-69fb-46a6-9548-8c5fc779e8b5">
+      <profileInstance Id="ac0690d5-96b9-4b68-80d4-9726ca94a627" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="5ee15e11-2366-4c8e-8944-573e8e3c66f5">
+      <profileInstance Id="3f02ff60-2ea2-4434-8624-289e90b29875" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="48561f44-c3a1-4fe9-9f0d-6f889853220f" name="KIocp" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="943b1c1b-5566-47f1-b82f-4c5927e3cfe4" />
+        <generalsInternal>
+          <generalization Id="a6e2a0eb-ed9c-4693-963d-7176f99b8772" isSubstitutable="false">
+            <classMoniker Id="3fc1cfeb-794b-49e3-96e7-f7aed2129c61" LastKnownName="KThreadManager" />
+            <elementDefinition Id="96ca7703-6b18-4318-a056-7b8d5248f467" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="7fc54085-4216-47be-8967-f9e1c32be2ed" isDerived="false" sourceEndRoleName="KIocp" targetEndRoleName="KSocket" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bae1aac8-86e0-4797-82ed-b98c367d7682" LastKnownName="KSocket" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cdbdec1d-7b74-4481-980d-8eee6f1bfaa1" name="KIocp" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0bec43c2-7bbc-4631-a736-d74135978ede" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cfb2659a-9794-4da8-984f-e72a63e8ebb5" name="KSocket" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="247208cb-7859-4e32-9d96-7ab313ea605e" name="Lower" value="*">
+                      <elementDefinition Id="268fe32e-89b1-4544-bdee-6eedf587cae1" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="f141f5bb-b20d-45a6-bd1e-a187b87424ce" name="Upper" value="*">
+                      <elementDefinition Id="070f636b-f123-4d6a-8f62-c8dbca1780bf" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="b394445f-3703-4a16-a2dc-aad96d0f9872" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7a3890a7-a954-449f-b6e0-2b72b03b6ff5" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="d96a6b7e-7ac7-4c3a-9142-1814f92386d1" name="OnIOCompleted" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="97021363-a8d6-4228-89c9-2ca15d837ed4" />
+          </operation>
+          <operation Id="b88810df-db20-412b-9283-391426ac966a" name="GetCompletionStatus" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5a08883c-b8f1-43d1-b6c5-fdf4f6bc09bb" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3fc1cfeb-794b-49e3-96e7-f7aed2129c61" name="KThreadManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3a408909-d798-47a2-b556-f9058ebbe812" />
+        <targetEnds>
+          <association Id="27b6f6f2-075d-4efd-8abe-58bd25428666" isDerived="false" sourceEndRoleName="KThreadManager" targetEndRoleName="KThread" isLeaf="false" isAbstract="false">
+            <classMoniker Id="88ff07f4-de29-4207-abac-cc4b324e6e82" LastKnownName="KThread" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="08a9d4ca-28a8-44d6-94c4-34bbd931bc0a" name="KThreadManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="76c23141-25f5-4960-9233-fedf756db4bc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b2e98d90-acf7-4641-9a2b-ac05175f7540" name="KThread" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="073119f0-a69d-461e-a4a5-37cee121b804" name="Lower" value="*">
+                      <elementDefinition Id="5ef12b86-0aec-448a-a1a3-460a2b474bef" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="ba225813-c31b-4c9f-86fc-54fc0c0fea10" name="Upper" value="*">
+                      <elementDefinition Id="719b4a89-6806-4f13-8d51-ecb628098e44" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="9179d1fc-1d5b-45ff-9b94-450f0efee22c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8d73a1ba-7c9e-479b-b034-856bdaeecf49" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bae1aac8-86e0-4797-82ed-b98c367d7682" name="KSocket" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d2d3a7e0-f09b-42d6-b68c-3816482be44c" />
+        <ownedOperationsInternal>
+          <operation Id="f8c3088f-0b08-4e8e-b540-f59f19c1ce4a" name="OnSendCompleted" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bea57033-e199-499e-a309-43e36657e0d8" />
+          </operation>
+          <operation Id="fe319437-4cc2-4cbc-8d91-4acb95590141" name="OnReceiveCompleted" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e007c471-a5bd-4415-bc61-5244e07868ec" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="88ff07f4-de29-4207-abac-cc4b324e6e82" name="KThread" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="eda0d1c5-9a3a-4e5e-9c07-399cc34c9e2b" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6d97396e-440c-450f-9358-9dea8256897d" name="KIocpWorkerThread" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7e5f8c3b-a4e0-40a7-87ce-c3fb1d8f6863" />
+        <suppliersInternal>
+          <dependency Id="6fdedfe1-36b1-4a16-900a-92adf69929be">
+            <classMoniker Id="48561f44-c3a1-4fe9-9f0d-6f889853220f" LastKnownName="KIocp" />
+            <elementDefinition Id="befab9d1-9713-425a-a4c3-0813131244c5" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="c9f57389-54f6-4d86-a009-9b302a51270e" isSubstitutable="false">
+            <classMoniker Id="88ff07f4-de29-4207-abac-cc4b324e6e82" LastKnownName="KThread" />
+            <elementDefinition Id="4f686397-1444-48c6-a2c0-c96031764980" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="015e346a-ab6e-48e0-a1bb-ec721fa70f31" name="ThreadUpdateLoop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8a213e13-2d03-41fa-8de2-67be3d042368" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="754bced1-cac5-48ff-8702-e9b7e0c8b7fa" name="KSocketAccepterThread" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ca05168c-2b0b-4b40-b0eb-e1927f223a15" />
+        <generalsInternal>
+          <generalization Id="87180f7f-0a8c-48fb-9005-43e6d4cd83e0" isSubstitutable="false">
+            <classMoniker Id="88ff07f4-de29-4207-abac-cc4b324e6e82" LastKnownName="KThread" />
+            <elementDefinition Id="79cb7b72-b05d-47b1-bc4c-bd94df6ccf97" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="98d10306-2e93-4d97-aa0e-327f5b032bf3" name="KUser" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="53fd4991-8665-4259-b964-eca27cec6296" />
+        <targetEnds>
+          <association Id="0d7464ff-09fb-4380-9b6b-5356c80aa3d6" isDerived="false" sourceEndRoleName="KUser" targetEndRoleName="KSocket" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8df2b29b-6090-48f3-af70-63761ad24da6" LastKnownName="KSocket" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fa292765-16e5-4be4-901a-dcc1130995d1" name="KUser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0e30c267-e3a8-4814-b08a-678bb49479cb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5f64102f-0359-4437-a286-0014c67a7bf2" name="KSocket" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e03e78c6-a5f8-4716-b5f4-4daa428b7d24" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="48113ba7-4da3-48d2-b5dd-85ba489082de" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8df2b29b-6090-48f3-af70-63761ad24da6" name="KSocket" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ad6295a2-a4f8-45e4-ae64-acc29d2a8926" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="205865a8-b195-461e-a9e5-5771440193f6" name="ModelingProject1">
+    <elementDefinition Id="9c192978-e4ea-4f3b-b601-9927760019ad" />
+  </package>
+</logicalClassDesignerModel>
