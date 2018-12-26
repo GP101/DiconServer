@@ -77,3 +77,5 @@ https://www.youtube.com/playlist?list=PLrrTotxaO6kgEMm9YYRX-jwHAHhqSt8Ke
 ### IOCP Server
   - Class diagram of IOCP Server(IOCP 서버 클래스 다이아그램)
   - Code Review(코드 오버뷰)
+### Database
+(will be covered on 2019)
