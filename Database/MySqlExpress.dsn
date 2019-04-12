@@ -1,0 +1,10 @@
+[ODBC]
+DRIVER=SQL Server
+UID=sa
+DATABASE=Customer
+WSID=DESKTOP-M0Q9EGC
+APP=Microsoft¢ç Windows¢ç Operating System
+SERVER=DESKTOP-M0Q9EGC\SQLEXPRESS
+Description=MySqlExpress Description
+Address=192.168.0.125,60009
+PWD=1234
