@@ -1,0 +1,8 @@
+[ODBC]
+DRIVER=SQL Server
+UID=sa
+DATABASE=Customer
+WSID=JINTAEKS2-PC
+APP=Microsoft¢ç Windows¢ç Operating System
+SERVER=JINTAEKS2-PC\SQLEXPRESS
+Description=MyUser Description

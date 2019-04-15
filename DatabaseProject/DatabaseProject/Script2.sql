@@ -1,0 +1,1 @@
+﻿select * from MyUser where loginName='jintaeks'
