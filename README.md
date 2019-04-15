@@ -78,4 +78,9 @@ https://www.youtube.com/playlist?list=PLrrTotxaO6kgEMm9YYRX-jwHAHhqSt8Ke
   - Class diagram of IOCP Server(IOCP 서버 클래스 다이아그램)
   - Code Review(코드 오버뷰)
 ### Database
-(will be covered on 2019)
+  (Video tutorials for Database will be added on 2019)
+  - Installing Microsoft Sql Server 2014 Express(for Windows 7 compatibility)
+  - Working with SSMS(Sql Server Management Studio)
+  - Using Visual Studio Database Project
+  - soci 4.0.0 for Microsoft Sql Server Connection.
+  - Working with Sp(Stored Procedure)
