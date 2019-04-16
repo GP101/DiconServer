@@ -86,5 +86,26 @@
     <ClCompile Include="boostTest_KGlobalSingleton.cpp">
       <Filter>References</Filter>
     </ClCompile>
+    <ClCompile Include="boostTest KPacket01.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest KPacket02.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest KPacket03.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest KPacket04.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest KPacket05.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest KPacket06.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest KPacket07.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
