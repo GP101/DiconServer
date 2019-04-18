@@ -29,7 +29,7 @@ public:
     virtual void        Finalize();
 
     virtual bool        DestroyAllSession() = 0;
-    virtual void        Update();
+	virtual void        Update(DWORD dwElapsedTime_);
     virtual void        OnPacket( IN KPacket* pkPacket_ ) = 0;
     void                QueueingPacket( const KPacketPtr& spPacket );
 

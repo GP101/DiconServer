@@ -20,8 +20,10 @@ public:
                             wchar_t buff3[128] = { 0 };
                             static long long sSeedNum = 0;
 
-                            swprintf_s( buff3, L"UID_%s_%s_%020d"
-                                        , _wstrdate_s( buff1 ), _wstrtime_s( buff2 ), ++sSeedNum );
+							_wstrdate_s(buff1, _countof(buff1));
+							_wstrtime_s(buff2, _countof(buff2));
+                            swprintf_s( buff3, L"UID_%s_%s_%020lld"
+                                        , buff1, buff2, ++sSeedNum );
 
                             m_wstrName = buff3;
                         }

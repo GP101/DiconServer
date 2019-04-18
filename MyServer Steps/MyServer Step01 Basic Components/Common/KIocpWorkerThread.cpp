@@ -27,20 +27,15 @@ VIRTUAL void KIocpWorkerThread::ThreadRun()
         const DWORD ret = ::WaitForSingleObject( m_hQuitEvent, 0 );
         if( ret == WAIT_OBJECT_0 )
             break;
-        else if( ret == WAIT_TIMEOUT )
-            ThreadUpdateLoop( dwElapsedTime );
-        else {
-            BEGIN_LOG( cerr, L"*** WaitForSingleObject() - return : " )
-                << LOG_NAMEVALUE( ret )
-                << END_LOG;
-        }
+
+        Update( dwElapsedTime );
     }// while
 
     BEGIN_LOG( cout, L"KIocpWorkerThread Exit ThreadRun" )
         << END_LOG;
 }
 
-VIRTUAL void KIocpWorkerThread::ThreadUpdateLoop( DWORD dwElapsedTime_ )
+VIRTUAL void KIocpWorkerThread::Update( DWORD dwElapsedTime_ )
 {
     LPOVERLAPPED povl = NULL;
     DWORD dwBytesTransfer = 0;

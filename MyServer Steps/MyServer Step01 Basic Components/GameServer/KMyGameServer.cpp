@@ -67,9 +67,9 @@ bool KMyGameServer::DestroyAllSession()
     return true;
 }
 
-VIRTUAL void KMyGameServer::Update()
+VIRTUAL void KMyGameServer::Update(DWORD dwElapsedTime_)
 {
-    VIRTUAL KBaseServer::Update();
+    VIRTUAL KBaseServer::Update(dwElapsedTime_);
 }
 
 VIRTUAL void KMyGameServer::OnPacket( IN KPacket* pkPacket )

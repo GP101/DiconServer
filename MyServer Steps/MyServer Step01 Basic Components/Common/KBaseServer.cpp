@@ -67,7 +67,7 @@ VIRTUAL void KBaseServer::Finalize()
     NetUtil::FinalizeWinsock();
 }
 
-VIRTUAL void KBaseServer::Update()
+VIRTUAL void KBaseServer::Update(DWORD dwElapsedTime_)
 {
     m_workQueue.ProcessPackets( boost::bind( &KBaseServer::OnPacket, this, _1 ) );
 }
