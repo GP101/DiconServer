@@ -125,5 +125,6 @@
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
+    <Build Include="dbo\Stored Procedures\spEcho.sql" />
   </ItemGroup>
 </Project>
