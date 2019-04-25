@@ -5,3 +5,4 @@ MyServer Steps/MyServer Step01 Basic Components/MyServer.sdf
 /boostTest/*.sdf
 /boostTest/boostTest/Debug
 *.sdf
+/boostTest/.vs

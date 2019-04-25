@@ -146,5 +146,41 @@
     <ClCompile Include="boostTest Fsm05 with enum.cpp">
       <Filter>References</Filter>
     </ClCompile>
+    <ClCompile Include="boostTest_serialization01.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_serialization02.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_serialization03.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest context coroutine.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest coroutine01.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest coroutine02 return from coroutine.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest coroutine03 passing two values.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest lockfree01.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest lockfree02.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest read write binary data.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_little endian.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_serialization00 prepare.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
