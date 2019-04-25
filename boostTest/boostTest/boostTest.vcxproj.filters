@@ -48,6 +48,9 @@
     <ClInclude Include="KGlobalSingletonNotGood.h">
       <Filter>References</Filter>
     </ClInclude>
+    <ClInclude Include="KThread.h">
+      <Filter>References</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="boostTest.cpp">
@@ -105,6 +108,42 @@
       <Filter>References</Filter>
     </ClCompile>
     <ClCompile Include="boostTest KPacket07.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_noncopyable.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_shared_ptr.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest EnumToString01.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest EnumToString02 static helper.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest EnumToString03 PRN_ENUM_TEXT_NARG.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest EnumToString04 DECLARE_ENUM.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest Fsm01.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest Fsm02.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest Fsm03 with Macros.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest Fsm04 with Inheritance.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_Endianess.cpp">
+      <Filter>References</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest Fsm05 with enum.cpp">
       <Filter>References</Filter>
     </ClCompile>
   </ItemGroup>

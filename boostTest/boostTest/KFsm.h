@@ -8,6 +8,7 @@
 #include <boost/shared_ptr.hpp>
 #include <map>
 #include "KCriticalSection.h"
+#include "EnumToString.h"
 
 
 class KFsmState;
@@ -31,11 +32,17 @@ public:
                             return m_vecTransition.size();
                         }//GetNumTransition()
 
-    void                AddTransition(int iInput_, int iDestState_)
-                        {
-                            m_vecTransition.push_back(std::make_pair(iInput_, iDestState_));
-                        }//AddTransition()
+	void                AddTransition(int iInput_, int iDestState_)
+						{
+							m_vecTransition.push_back(std::make_pair(iInput_, iDestState_));
+						}//AddTransition()
 
+	void                AddTransition(int iInput_, const KFsmState& destState_)
+						{
+							m_vecTransition.push_back(std::make_pair(iInput_, destState_.GetStateId()));
+						}//AddTransition()
+
+						// return stateId for input 'iInput_'
     int                 GetDestState(int iInput_) const
                         {
                             std::vector<std::pair<int, int>>::const_iterator itor
@@ -46,6 +53,8 @@ public:
                             return INVALID_STATE;
                         }//GetDestState()
 
+						/// @param	iNumStates_ : number of states listed
+						/// @param	... : state list as variable arguments
     bool                CheckState(int iNumStates_, ...)
                         {
                             va_list ap;
@@ -123,13 +132,11 @@ public:
                             if (spCurrentState == nullptr)
                                 return KFsmState::INVALID_STATE;
 
-                            m_iCurrentStateId = spCurrentState->GetDestState(iInput_);
-                            return m_iCurrentStateId;
+                            const int iCurrentStateId = spCurrentState->GetDestState(iInput_);
+							if (iCurrentStateId != KFsmState::INVALID_STATE)
+								m_iCurrentStateId = iCurrentStateId; // update current state if valid
+                            return iCurrentStateId;
                         }//DoTransition()
-    virtual std::wstring
-                        GetStateIdString( int iStateId_ ) const = 0;
-    virtual std::wstring
-                        GetInputIdString( int iInputId_ ) const = 0;
 };//class KFsm
 
 /** @example class KFsm
@@ -168,90 +175,67 @@ public:
 class KFsmBase
 {
 public:
-    void                SetFSM( KFsmPtr& spFSM )
+    void                SetFsm( KFsmPtr& spFSM )
                         {
                             KCriticalSectionLock lock( m_csFsm );
-                            m_spFSM = spFSM;
-                            m_pkCurrentState = m_spFSM->GetState( 1 );
+                            m_spFsm = spFSM;
                         }
-    KFsmPtr             GetFSM()
+    KFsmPtr             GetFsm()
                         {
                             KCriticalSectionLock lock( m_csFsm );
-                            return m_spFSM;
-                        }
-    std::wstring        GetStateIdString() const
-                        {
-                            KCriticalSectionLock lock( m_csFsm );
-                            return m_spFSM->GetStateIdString( m_pkCurrentState->GetStateId() );
+                            return m_spFsm;
                         }
     int                 GetStateId() const
                         {
                             KCriticalSectionLock lock( m_csFsm );
-                            return m_pkCurrentState->GetStateId();
+                            return m_spFsm->GetCurrentState()->GetStateId();
                         }
-    void                StateTransition( int nInput )
+    bool                StateTransition( int nInput )
                         {
                             KCriticalSectionLock lock( m_csFsm );
-                            m_pkCurrentState = m_spFSM->GetState( m_pkCurrentState->GetDestState( nInput ) );
-                        }
-    void                ForceStateTransitionTo( int nStateId )
-                        {
-                            KCriticalSectionLock lock( m_csFsm );
-                            m_pkCurrentState = m_spFSM->GetState( nStateId );
+                            const int iState = m_spFsm->DoTransition(nInput);
+                            return iState != KFsmState::INVALID_STATE;
                         }
 
 protected:
     mutable KCriticalSection
                         m_csFsm;
-    KFsmStatePtr        m_pkCurrentState;
-    KFsmPtr             m_spFSM;
+    KFsmPtr             m_spFsm;
 };
 
-#define DeclareFSM  \
+#define DECLARE_FSM  \
     public: \
-        void SetFSM( KFsmPtr& spFSM ) \
+        void SetFsm( KFsmPtr& spFSM ) \
         { \
             KCriticalSectionLock lock( m_cs ); \
-            m_spFSM = spFSM; \
-            m_pkCurrentState = m_spFSM->GetState( 1 ); \
+            m_spFsm = spFSM; \
         } \
-        KFsmPtr GetFSM() \
+        KFsmPtr GetFsm() \
         { \
             KCriticalSectionLock lock( m_cs ); \
-            return m_spFSM; \
-        } \
-        std::wstring GetStateIdString() const \
-        { \
-            KCriticalSectionLock lock( m_cs ); \
-            return m_spFSM->GetStateIdString( m_pkCurrentState->GetStateId() ); \
+            return m_spFsm; \
         } \
         int GetStateId() \
         { \
             KCriticalSectionLock lock( m_cs ); \
-            return m_pkCurrentState->GetStateId(); \
+            return m_spFsm->GetCurrentState()->GetStateId(); \
         } \
-        void StateTransition( int nInput ) \
+        bool StateTransition( int nInput ) \
         { \
             KCriticalSectionLock lock( m_cs ); \
-            m_pkCurrentState = m_spFSM->GetState( m_pkCurrentState->GetDestState( nInput ) ); \
-        } \
-        void ForceStateTransitionTo( int nStateId ) \
-        { \
-            KCriticalSectionLock lock( m_cs ); \
-            m_pkCurrentState = m_spFSM->GetState( nStateId ); \
+            const int iState = m_spFsm->DoTransition( nInput ); \
+            return iState != KFsmState::INVALID_STATE; \
         } \
 protected: \
     mutable KCriticalSection      m_cs;   \
-    KFsmStatePtr        m_pkCurrentState;   \
-    KFsmPtr             m_spFSM
+    KFsmPtr             m_spFsm
 
 
-#define VERIFY_STATE( varg ) \
-    if( !m_pkCurrentState->CheckState varg ) \
+#define VERIFY_STATE( ... ) \
+    if( !m_spFsm->GetCurrentState()->CheckState(PRN_ENUM_TEXT_NARG(__VA_ARGS__), __VA_ARGS__) ) \
     { \
-        BEGIN_LOG( cerr, L"error" ) \
-        << LOG_NAMEVALUE( m_wstrName ) \
-        << L"    Current State : " << GetStateIdString() << std::endl \
-        << L"    Valid State : "L ## #varg << std::endl; \
+        BEGIN_LOG( std::cerr, L"error" ) \
+        << L"    Current State : " << GetStateId() << std::endl \
+        << L"    Valid State : " L ## #__VA_ARGS__ << std::endl; \
         return; \
     }

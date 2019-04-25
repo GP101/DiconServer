@@ -3,7 +3,8 @@
 #include <boost/log/common.hpp>
 #include <boost/log/sinks.hpp>
 #include <boost/log/sources/logger.hpp>
-#include <boost/utility/empty_deleter.hpp>
+//#include <boost/utility/empty_deleter.hpp>
+#include <boost/core/null_deleter.hpp>
 #include <boost/shared_ptr.hpp>
 #include <iostream>
 #include "KGlobalSingleton.h"
@@ -27,7 +28,8 @@ public:
     void Initialize()
     {
         sink = boost::make_shared<text_sink>();
-        stream.reset( &std::clog, boost::empty_deleter{} );
+        //stream.reset(&std::clog, boost::empty_deleter{});
+        stream.reset( &std::clog, boost::null_deleter{} );
         sink->locked_backend( )->add_stream( stream );
         boost::log::core::get( )->add_sink( sink );
     }
