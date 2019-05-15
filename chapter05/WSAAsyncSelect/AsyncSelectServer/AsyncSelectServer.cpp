@@ -161,9 +161,6 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
                 else
                     printf("accept() is OK!\n");
 
-
-
-
                 // Create a socket information structure to associate with the socket for processing I/O
                 CreateSocketInformation(Accept);
                 printf("Socket number %d connected\n", Accept);

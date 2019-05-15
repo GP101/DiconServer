@@ -218,7 +218,7 @@ void CALLBACK WorkerRoutine(DWORD Error, DWORD BytesTransferred, LPWSAOVERLAPPED
         SI->BytesSEND += BytesTransferred;
     }
 
-    if (SI->BytesRECV > SI->BytesSEND)
+    if (SI->BytesSEND < SI->BytesRECV )
     {
         // Post another WSASend() request.
         // Since WSASend() is not guaranteed to send all of the bytes requested,
