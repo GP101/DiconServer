@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcpclient", "tcpclient\tcpclient.vcxproj", "{660C2A66-F9EE-4A4D-9B97-82674309E9C7}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcpserver", "tcpserver\tcpserver.vcxproj", "{ED020D8D-AC99-48B3-89B9-F35D9A160794}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcpserver_socket_accepter_thread", "tcpserver_socket_accepter_thread\tcpserver_socket_accepter_thread.vcxproj", "{478ADB28-D7CF-405A-B03B-B1A022D3B859}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcpserver_socket_accepter_thread Iocp", "tcpserver_socket_accepter_thread Iocp\tcpserver_socket_accepter_thread Iocp.vcxproj", "{3AE86784-640D-4C04-BE9F-8336B6E32A4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,8 +29,15 @@ Global
 		{478ADB28-D7CF-405A-B03B-B1A022D3B859}.Debug|Win32.Build.0 = Debug|Win32
 		{478ADB28-D7CF-405A-B03B-B1A022D3B859}.Release|Win32.ActiveCfg = Release|Win32
 		{478ADB28-D7CF-405A-B03B-B1A022D3B859}.Release|Win32.Build.0 = Release|Win32
+		{3AE86784-640D-4C04-BE9F-8336B6E32A4D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3AE86784-640D-4C04-BE9F-8336B6E32A4D}.Debug|Win32.Build.0 = Debug|Win32
+		{3AE86784-640D-4C04-BE9F-8336B6E32A4D}.Release|Win32.ActiveCfg = Release|Win32
+		{3AE86784-640D-4C04-BE9F-8336B6E32A4D}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EFC8428-5336-432A-9D0F-A1CDE16A9974}
 	EndGlobalSection
 EndGlobal

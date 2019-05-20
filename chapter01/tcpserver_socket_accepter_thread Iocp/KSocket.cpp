@@ -16,21 +16,21 @@ CONSTRUCTOR KSocket::KSocket()
     m_ovlSend.hEvent = NULL;
 }
 
-void KSocket::SetIoEventHandle( KOverlapped::EIoMode eMode_, HANDLE hEvent_ )
-{
-    //// Event must be destroyed after thread termination.
-    //// So, Event is managed inside the thread class.
-
-    switch( eMode_ ) {
-    case KOverlapped::IO_SEND:
-        m_ovlSend.hEvent = hEvent_;
-        break;
-
-    case KOverlapped::IO_RECEIVE:
-        m_ovlReceive.hEvent = hEvent_;
-        break;
-    }
-}
+//void KSocket::SetIoEventHandle( KOverlapped::EIoMode eMode_, HANDLE hEvent_ )
+//{
+//    //// Event must be destroyed after thread termination.
+//    //// So, Event is managed inside the thread class.
+//
+//    switch( eMode_ ) {
+//    case KOverlapped::IO_SEND:
+//        m_ovlSend.hEvent = hEvent_;
+//        break;
+//
+//    case KOverlapped::IO_RECEIVE:
+//        m_ovlReceive.hEvent = hEvent_;
+//        break;
+//    }
+//}
 
 DESTRUCTOR KSocket::~KSocket()
 {
@@ -93,33 +93,33 @@ bool KSocket::ReceiveData()
     return ret == 0;
 }
 
-void KSocket::OnIoCompleted( KOverlapped::EIoMode eMode_ )
-{
-    DWORD dwTransfered = 0;
-    DWORD dwFlag = 0;
-    LPWSAOVERLAPPED povl = NULL;
-
-    switch( eMode_ ) {
-    case KOverlapped::IO_SEND:
-        povl = &m_ovlSend;
-        break;
-    case KOverlapped::IO_RECEIVE:
-        povl = &m_ovlReceive;
-        break;
-    default:
-        return;
-    }
-
-    CSLOCK( m_csSock )
-    {
-        ::WSAGetOverlappedResult( m_sock, povl, &dwTransfered, FALSE, &dwFlag );
-    }
-
-    if( eMode_ == KOverlapped::IO_SEND )
-        OnSendCompleted( dwTransfered );
-    else
-        VIRTUAL OnReceiveCompleted( dwTransfered );
-}
+//void KSocket::OnIoCompleted( KOverlapped::EIoMode eMode_ )
+//{
+//    DWORD dwTransfered = 0;
+//    DWORD dwFlag = 0;
+//    LPWSAOVERLAPPED povl = NULL;
+//
+//    switch( eMode_ ) {
+//    case KOverlapped::IO_SEND:
+//        povl = &m_ovlSend;
+//        break;
+//    case KOverlapped::IO_RECEIVE:
+//        povl = &m_ovlReceive;
+//        break;
+//    default:
+//        return;
+//    }
+//
+//    CSLOCK( m_csSock )
+//    {
+//        ::WSAGetOverlappedResult( m_sock, povl, &dwTransfered, FALSE, &dwFlag );
+//    }
+//
+//    if( eMode_ == KOverlapped::IO_SEND )
+//        OnSendCompleted( dwTransfered );
+//    else
+//        VIRTUAL OnReceiveCompleted( dwTransfered );
+//}
 
 void KSocket::OnSendCompleted( DWORD dwTransfered_ )
 {

@@ -23,7 +23,7 @@ public:
     bool                SendData( const char* szData, int iSize );
     bool                ReceiveData();
 
-    void                OnIoCompleted( KOverlapped::EIoMode eMode );
+    //void                OnIoCompleted( KOverlapped::EIoMode eMode );
 
     void                SetIp( const char* szIP );
     void                SetPort( u_short usPort ) { m_sockaddr.sin_port = htons( usPort ); }
@@ -41,7 +41,7 @@ public:
     DWORD               GetKey() const { return m_dwKey; }
 
     /// set external Event handle.
-    void                SetIoEventHandle( KOverlapped::EIoMode eMode_, HANDLE hEvent_ );
+    //void                SetIoEventHandle( KOverlapped::EIoMode eMode_, HANDLE hEvent_ );
     BOOL                CancelIo() { return ::CancelIo( (HANDLE)m_sock ); }
 
     unsigned int        GetIp() const { return m_sockaddr.sin_addr.S_un.S_addr; }
