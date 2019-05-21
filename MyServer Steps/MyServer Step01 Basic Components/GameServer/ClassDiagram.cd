@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="KBaseServer">
+    <Position X="11.5" Y="4" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAQAQIAAADAAAAACgwAAAAAAAgAABCYA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KBaseServer.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_kSocketAccepterThread" />
+      <Field Name="m_workQueue" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KBaseSingleton&lt;T&gt;" Collapsed="true">
+    <Position X="14" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KBaseSingleton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KCriticalSectionLock" Collapsed="true">
+    <Position X="21" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAEAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KCriticalSection.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KFsmState" Collapsed="true">
+    <Position X="22.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAABAAAAAAAAAAAAAAAAAJICAJAIAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KFsm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KFsm" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAgAAAQAQAAEAAAAAQQAIAAAAAAAAABAAACAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KFsm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KFsmBase" Collapsed="true">
+    <Position X="15.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACABAAAAACAAAABAAAAAAAACAAAAAAAAJAAAIAgAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KFsm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KGlobalSingleton&lt;T&gt;" Collapsed="true">
+    <Position X="2.25" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAAgAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KGlobalSingleton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KIocp">
+    <Position X="3.5" Y="6.5" Width="3.25" />
+    <NestedTypes>
+      <Enum Name="KIocp::__unnamed_enum_000b_1" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KIocp.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAACAQAAAQAAAQAEAAAASAgBAABBgAAEAAgAAhAQAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KIocp.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KIocpWorkerThread" Collapsed="true">
+    <Position X="15" Y="11.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAACAAAAAAAAAAAABAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KIocpWorkerThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KLog" Collapsed="true">
+    <Position X="18.25" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABQiAAAAAAgAAAAAAgAAACAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KLog.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KOverlapped" Collapsed="true">
+    <Position X="24.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAQAQABAAAQ=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KOverlapped.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="vectorwrapbuf&lt;CharT, TraitsT&gt;" Collapsed="true">
+    <Position X="21" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KPacket.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KPacket" Collapsed="true">
+    <Position X="2.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABQBAAAAgBAAAAAAIAAAAAAAAAAAAAAgAAAAgAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KPacket.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KPool&lt;T&gt;" Collapsed="true">
+    <Position X="2.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KPool.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KServerObject" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAAAAAAAAAAAYAAABAAAAAEAAAAAAAAAIUAAABAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KServerObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KSession">
+    <Position X="8" Y="2" Width="2.75" />
+    <NestedTypes>
+      <Enum Name="KSession::__unnamed_enum_0015_1" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KSession.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AASRAAEABAAAAUBQBAABDAAAggACgIAAAAACCAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KSession.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_workQueue" />
+      <Field Name="m_kSessionSocket" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KSessionSocket">
+    <Position X="8.25" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAEAAACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KSessionSocket.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_pkSession" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KSocket" Collapsed="true">
+    <Position X="8.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBBAAEAAICABAhAAMAMCNQAgAAAQIAIEAACqAAQAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KSocket.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KSocketAccepterThread" Collapsed="true">
+    <Position X="12.25" Y="11.75" Width="2" />
+    <NestedTypes>
+      <Typedef Name="KSocketAccepterThread::CreateUserCallback" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KSocketAccepterThread.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Struct Name="KSocketAccepterThread::KSocketAccepterInitParam" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KSocketAccepterThread.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQAgCABAAAAAAAAAAAAgAAAAQAAAAAAEAAAAAgBACA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KSocketAccepterThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KThread" Collapsed="true">
+    <Position X="13.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kABIACAAAAAAAAAQIAAAgAgAAAAgAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KThreadManager">
+    <Position X="4.75" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQCAAAACAQAQAAAiCAACAAgCgAAAAAAACAAkAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KThreadManager.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_vecThread" />
+      <Field Name="m_workQueue" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KUser" Collapsed="true">
+    <Position X="8.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAABAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KUser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KWorkQueue" Collapsed="true">
+    <Position X="11.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAQAQAAAAAAAAAAgEkAAAAAEQAAAAACA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KWorkQueue.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KMyGameServer" Collapsed="true">
+    <Position X="12.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAAAAAAAAAQAAAAAAhAAAAAAAgAAAAAAAAQAACAA=</HashCode>
+      <FileName>KMyGameServer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KMyUserFsm" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAACAACAAAAAAAAAA=</HashCode>
+      <FileName>KMyUserFsm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::vector&lt;_Ty, _Alloc&gt;" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AUIAEIEqCrBsEEBAAOMIAAAyAAUEQBIAhQkwggAFUkI=</HashCode>
+      <FileName>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include\vector</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="KServerInitParam" Collapsed="true">
+    <Position X="21" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAIAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KBaseServer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="KCriticalSection" Collapsed="true">
+    <Position X="21" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KCriticalSection.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ScopeExit&lt;F&gt;" Collapsed="true">
+    <Position X="22.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAEAAAAAAAAAQAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KGen.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="KIdPacket" Collapsed="true">
+    <Position X="22.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\CommonPacket.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="KNetAddress" Collapsed="true">
+    <Position X="24.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\CommonPacket.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="CreateUserCallback" Collapsed="true">
+    <Position X="21" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KBaseServer.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="KFsmStatePtr" Collapsed="true">
+    <Position X="24.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KFsm.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="KFsmPtr" Collapsed="true">
+    <Position X="22.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KFsm.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="KIocpWorkerThreadPtr" Collapsed="true">
+    <Position X="21" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KIocpWorkerThread.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="KPacketPtr" Collapsed="true">
+    <Position X="24.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KPacket.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="KSocketAccepterPtr" Collapsed="true">
+    <Position X="21" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KSocketAccepterThread.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="KUserPtr" Collapsed="true">
+    <Position X="22.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KUser.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="NetErr" Collapsed="true">
+    <Position X="24.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\NetError.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="KMyGameServerPtr" Collapsed="true">
+    <Position X="22.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KMyGameServer.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="EPacketIds" Collapsed="true">
+    <Position X="21" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAAAQAAAABAAAA=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\KPacket.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="NetError::NETWORK_ERROR" Collapsed="true">
+    <Position X="22.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAgAAAAAAAAAAAAAAAAAAAAAAAAIAHAAAAAAAAABE=</HashCode>
+      <FileName>D:\github\DiconServer\MyServer Steps\MyServer Step01 Basic Components\Common\NetError.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
