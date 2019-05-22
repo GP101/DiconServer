@@ -1,2 +1,140 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KGlobalSingleton&lt;T&gt;" Collapsed="true">
+    <Position X="8" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAAgAAAAAAA=</HashCode>
+      <FileName>KGlobalSingleton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KIocp">
+    <Position X="5" Y="4.25" Width="2" />
+    <NestedTypes>
+      <Enum Name="KIocp::__unnamed_enum_0013_1" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>KIocp.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAACAQAAAQAAAQAEAAAASAgBAABBgAAEAAgAAhAQAAA=</HashCode>
+      <FileName>KIocp.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_mapSocketObject" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KIocpWorkerThread" Collapsed="true">
+    <Position X="8" Y="8.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAACAAAAAAAAAAAABAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>KIocpWorkerThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KOverlapped">
+    <Position X="12.25" Y="4" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="KOverlapped::EIoMode" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>KOverlapped.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAQAQABAAAQ=</HashCode>
+      <FileName>KOverlapped.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KSocket">
+    <Position X="15.25" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AgBBAAEAAICABAhAAMAMCFQAgAAAQIAIEAACqAAAAAA=</HashCode>
+      <FileName>KSocket.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_ovlReceive" />
+      <Field Name="m_ovlSend" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KSocketAccepterThread">
+    <Position X="10.5" Y="8.75" Width="2" />
+    <NestedTypes>
+      <Typedef Name="KSocketAccepterThread::CreateUserCallback" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>KSocketAccepterThread.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Struct Name="KSocketAccepterThread::KSocketAccepterInitParam" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>KSocketAccepterThread.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAgCABAAACAAAAAAAAgAAAAQAAAAAAEAAAAAgBACA=</HashCode>
+      <FileName>KSocketAccepterThread.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_sock" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KThread">
+    <Position X="9.5" Y="4.5" Width="1.75" />
+    <NestedTypes>
+      <Typedef Name="KThread::PTHREAD_START" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>KThread.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>kABIACAAAAAAAAAQIAAAgAgAAAAgAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>KThread.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_pkThreadMgr" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KThreadManager">
+    <Position X="5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQCAAAAAAQAAAAAiAAACAAACgAAAAAAACAAkAAA=</HashCode>
+      <FileName>KThreadManager.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_vecThread" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KUser">
+    <Position X="18.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAECAAAAAAAAAAAABAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>KUser.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_pSocket" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="std::map&lt;_Kty, _Ty, _Pr, _Alloc&gt;" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAABAAACQAAAAAAAAAAEBBAAAgQAgAAAAAAA=</HashCode>
+      <FileName>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include\map</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::vector&lt;_Ty, _Alloc&gt;" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AUIAEIEqCrBsEEBAAOMIAAAyAAUEQBIAhQkwggAFUkI=</HashCode>
+      <FileName>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include\vector</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Typedef Name="SOCKET" Collapsed="true">
+    <Position X="13.75" Y="10" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\WinSock2.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
