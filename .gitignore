@@ -13,3 +13,11 @@ MyServer Steps/MyServer Step01 Basic Components/MyServer.sdf
 /chapter05/.vs
 /chapter05/iocp/iocpServer/Debug
 /chapter05/Debug
+/prerequisite/.vs
+/prerequisite/Debug
+/prerequisite/Win32Thread/Debug
+/prerequisite/ConsoleProject/Debug
+/prerequisite/Win32Thread2/Debug
+/prerequisite/ConsoleProject/*.user
+/prerequisite/Win32Thread/*.user
+/prerequisite/Win32Thread2/*.user
