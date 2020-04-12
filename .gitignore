@@ -21,3 +21,4 @@ MyServer Steps/MyServer Step01 Basic Components/MyServer.sdf
 /prerequisite/ConsoleProject/*.user
 /prerequisite/Win32Thread/*.user
 /prerequisite/Win32Thread2/*.user
+/desktop.ini
