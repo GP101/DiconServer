@@ -25,3 +25,6 @@ MyServer Steps/MyServer Step01 Basic Components/MyServer.sdf
 /chapter01/tcpclient/Debug
 /chapter01/tcpserver/Debug
 /chapter01/tcpserver_socket_accepter_thread/Debug
+/chapter01/tcpclient/*.user
+/chapter01/udpreceiver/Debug
+/chapter01/udpsender/Debug

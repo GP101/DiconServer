@@ -21,6 +21,9 @@
 
 #include <winsock2.h>
 #include <stdio.h>
+#include <WS2tcpip.h>
+
+#pragma comment(lib, "ws2_32.lib")
 
 void main(void)
 {
@@ -91,8 +94,9 @@ void main(void)
       return;
    }
 
+   char ipbuf[INET_ADDRSTRLEN];
    printf("We successfully received %d bytes from address %s:%d.\n", Ret,
-          inet_ntoa(SenderAddr.sin_addr), ntohs(SenderAddr.sin_port));
+       inet_ntop(AF_INET, &SenderAddr.sin_addr, ipbuf, sizeof(ipbuf)), ntohs(SenderAddr.sin_port));
 
 
    // When your application is finished receiving datagrams close

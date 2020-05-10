@@ -16,9 +16,12 @@
 //    udpsender.exe <receiver IP address> 
 //
 
-
+//#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include <winsock2.h>
 #include <stdio.h>
+#include <WS2tcpip.h>
+
+#pragma comment(lib, "ws2_32.lib")
 
 void main(int argc, char **argv)
 {
@@ -62,10 +65,10 @@ void main(int argc, char **argv)
    // for datagrams on port 5150. Obviously you will want to prompt 
    // the user for an IP address and port number and fill these 
    // fields in with the data from the user.
-
    ReceiverAddr.sin_family = AF_INET;
    ReceiverAddr.sin_port = htons(Port);    
-   ReceiverAddr.sin_addr.s_addr = inet_addr(argv[1]);
+   //ReceiverAddr.sin_addr.s_addr = inet_addr(argv[1]);
+   InetPtonA(AF_INET, argv[1], &ReceiverAddr.sin_addr.s_addr);
 
    // Send a datagram to the receiver.
 
@@ -81,8 +84,9 @@ void main(int argc, char **argv)
    // When your application is finished sending datagrams close
    // the socket.
 
+   char ipbuf[INET_ADDRSTRLEN];
    printf("We successfully sent %d byte(s) to %s:%d.\n", Ret,
-          inet_ntoa(ReceiverAddr.sin_addr), htons(ReceiverAddr.sin_port));
+       inet_ntop(AF_INET, &ReceiverAddr.sin_addr, ipbuf, sizeof(ipbuf)),htons(ReceiverAddr.sin_port));
 
    closesocket(SendingSocket);
 
