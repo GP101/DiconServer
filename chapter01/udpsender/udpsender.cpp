@@ -23,7 +23,7 @@
 
 #pragma comment(lib, "ws2_32.lib")
 
-void main(int argc, char **argv)
+int main(int argc, char **argv)
 {
    WSADATA              wsaData;
    SOCKET               SendingSocket;
@@ -34,7 +34,7 @@ void main(int argc, char **argv)
    if (argc <= 1)
    {
       printf("USAGE: udpsender <receiver IP address>.\n");
-      return;
+      return 0;
    }
 
    // Initialize Winsock version 2.2
@@ -46,7 +46,7 @@ void main(int argc, char **argv)
       // API fails. We have to report the return status of the function.
 
       printf("ERROR: WSAStartup failed with error %d\n", Ret);
-      return;
+      return 0;
    }
    
    // Create a new socket to receive datagrams on.
@@ -56,7 +56,7 @@ void main(int argc, char **argv)
    {
       printf("ERROR: socket failed with error %d\n", WSAGetLastError());
       WSACleanup();
-      return;
+      return 0;
    }
 
    // Setup a SOCKADDR_IN structure that will identify who we
@@ -78,7 +78,7 @@ void main(int argc, char **argv)
       printf("ERROR: sendto failed with error %d\n", WSAGetLastError());
       closesocket(SendingSocket);
       WSACleanup();
-      return;
+      return 0;
    }
 
    // When your application is finished sending datagrams close
@@ -93,5 +93,7 @@ void main(int argc, char **argv)
    // When your application is finished call WSACleanup.
 
    WSACleanup();
+
+   return 0;
 }
 

@@ -25,7 +25,7 @@
 
 #pragma comment(lib, "ws2_32.lib")
 
-void main(void)
+int main(void)
 {
    WSADATA              wsaData;
    SOCKET               ReceivingSocket;
@@ -47,7 +47,7 @@ void main(void)
       // API fails. We have to report the return status of the function.
 
       printf("ERROR: WSAStartup failed with error %d\n", Ret);
-      return;
+      return 0;
    }
 
    
@@ -58,7 +58,7 @@ void main(void)
    {
       printf("ERROR: socket failed with error %d\n", WSAGetLastError());
       WSACleanup();
-      return;
+      return 0;
    } 
 
    // Setup a SOCKADDR_IN structure that will tell bind that we
@@ -77,7 +77,7 @@ void main(void)
       printf("ERROR: bind failed with error %d\n", WSAGetLastError());
       closesocket(ReceivingSocket);
       WSACleanup();
-      return;
+      return 0;
    }
 
    printf("We are ready to receive 1 datagram from any interface on port %d...\n",
@@ -91,7 +91,7 @@ void main(void)
       printf("ERROR: recvfrom failed with error %d\n", WSAGetLastError());
       closesocket(ReceivingSocket);
       WSACleanup();
-      return;
+      return 0;
    }
 
    char ipbuf[INET_ADDRSTRLEN];
@@ -107,4 +107,6 @@ void main(void)
    // When your application is finished call WSACleanup.
 
    WSACleanup();
+
+   return 0;
 }

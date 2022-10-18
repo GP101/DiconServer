@@ -5,9 +5,10 @@
 #include "NetUtil.h"
 #include <time.h>
 #include "CommonPacket.h"
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include "KIocp.h"
 
+using namespace boost::placeholders;
 
 CONSTRUCTOR KSession::KSession()
     : m_bDestroyReserved( false )

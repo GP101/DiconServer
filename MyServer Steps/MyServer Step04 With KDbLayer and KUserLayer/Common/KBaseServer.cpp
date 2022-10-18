@@ -7,7 +7,9 @@
 #include "KNetLayer.h"
 #include "KUserLayer.h"
 #include "KDbLayer.h"
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
+
+using namespace boost::placeholders;
 
 #pragma comment( lib, "ws2_32" )
 

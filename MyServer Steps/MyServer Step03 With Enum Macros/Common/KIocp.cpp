@@ -2,10 +2,11 @@
 #include "KIocp.h"
 #include "KGen.h"
 #include "KIocpWorkerThread.h"
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #undef max
 #include <boost/random.hpp>
 
+using namespace boost::placeholders;
 
 CONSTRUCTOR KIocp::KIocp() 
     : m_hIocp( NULL )

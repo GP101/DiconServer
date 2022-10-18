@@ -5,7 +5,9 @@
 #include "KThreadManager.h"
 #include "NetUtil.h"
 #include "KNetLayer.h"
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
+
+using namespace boost::placeholders;
 
 #pragma comment( lib, "ws2_32" )
 

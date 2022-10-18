@@ -28,3 +28,21 @@ MyServer Steps/MyServer Step01 Basic Components/MyServer.sdf
 /chapter01/tcpclient/*.user
 /chapter01/udpreceiver/Debug
 /chapter01/udpsender/Debug
+/MyServer Steps/MyServer Step02 With/GameServer/Debug
+/MyServer Steps/MyServer Step03 With Enum Macros/GameServer/Debug
+/chapter05/select/selectserver/Debug
+/chapter05/select/selectclient/Debug
+/chapter05/overlapped/overlappedServerCompletionRoutine/Debug
+/chapter05/overlapped/overlappedServer/Debug
+/chapter05/blocking/blockingserver/Debug
+/chapter05/WSAEventSelect/EventSelectServer/Debug
+/chapter05/WSAAsyncSelect/AsyncSelectServer/Debug
+/chapter03/resolve/Debug
+/chapter03/Debug
+/chapter02/enumcat/Debug
+/chapter02/Debug
+/chapter01/x64/Debug
+/chapter01/udpsender/x64/Debug
+/chapter01/udpreceiver/x64/Debug
+/MyServer Steps/MyServer Step04-2 With Database/GameServer/Debug
+/MyServer Steps/MyServer Step04 With KDbLayer and KUserLayer/GameServer/Debug

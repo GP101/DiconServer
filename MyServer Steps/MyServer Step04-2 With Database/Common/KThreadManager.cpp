@@ -1,7 +1,8 @@
 #include "KGen.h"
 #include "KThreadManager.h"
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
+using namespace boost::placeholders;
 
 CONSTRUCTOR KThreadManager::KThreadManager() 
 {

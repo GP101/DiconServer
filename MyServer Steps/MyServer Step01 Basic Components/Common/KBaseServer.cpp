@@ -4,8 +4,10 @@
 #include "NetError.h"
 #include "KThreadManager.h"
 #include "NetUtil.h"
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include "KIocp.h"
+
+using namespace boost::placeholders;
 
 #pragma comment( lib, "ws2_32" )
 

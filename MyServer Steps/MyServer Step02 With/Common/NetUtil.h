@@ -1,5 +1,5 @@
 #pragma once
-#define _WINSOCK_DEPRECATED_NO_WARNINGS
+//#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #define _WINSOCKAPI_
 #include <Windows.h>
 #include <string>
