@@ -84,3 +84,9 @@ https://www.youtube.com/playlist?list=PLrrTotxaO6kgEMm9YYRX-jwHAHhqSt8Ke
   - Using Visual Studio Database Project
   - soci 4.0.0 for Microsoft Sql Server Connection.
   - Working with Sp(Stored Procedure)
+  
+# Revision History
+* 2022.10.18
+  - Updated for Visual Studio 2022 and boost 1.79
+
+@
