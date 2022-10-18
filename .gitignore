@@ -46,3 +46,6 @@ MyServer Steps/MyServer Step01 Basic Components/MyServer.sdf
 /chapter01/udpreceiver/x64/Debug
 /MyServer Steps/MyServer Step04-2 With Database/GameServer/Debug
 /MyServer Steps/MyServer Step04 With KDbLayer and KUserLayer/GameServer/Debug
+/chapter02/.vs
+/chapter03/.vs
+/chapter02/enumcat/*.user
