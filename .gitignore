@@ -49,3 +49,9 @@ MyServer Steps/MyServer Step01 Basic Components/MyServer.sdf
 /chapter02/.vs
 /chapter03/.vs
 /chapter02/enumcat/*.user
+/chapter03/resolve/*.user
+/chapter05/WSAEventSelect/EventSelectServer/*.user
+/chapter05/blocking/blockingserver/*.user
+/chapter05/overlapped/overlappedServerCompletionRoutine/*.user
+/chapter05/select/selectclient/*.user
+/chapter05/select/selectserver/*.user
