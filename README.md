@@ -85,6 +85,14 @@ https://www.youtube.com/playlist?list=PLrrTotxaO6kgEMm9YYRX-jwHAHhqSt8Ke
   - soci 4.0.0 for Microsoft Sql Server Connection.
   - Working with Sp(Stored Procedure)
   
+# Network Programming For Microsoft Windows 2ed
+* Original Source Code
+  - https://github.com/c3827286/NetworkProgrammingForMicrosoftWindows2e
+* Visual Studio 2008 Sources
+  - https://www.winsocketdotnetworkprogramming.com/winsock2programming/
+* pdf file download link
+  - https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiHi6-wier6AhVJPHAKHejSB-EQFnoECAwQAQ&url=https%3A%2F%2Fdoc.lagout.org%2Foperating%2520system%2520%2FWindows%2FNetwork%2520programming%2520for%2520microsoft%2520windows%25202ed.pdf&usg=AOvVaw3yYDnfvEYdkg5H8UrcxXjb
+  
 # Revision History
 * 2022.10.18
   - Updated for Visual Studio 2022 and boost 1.79
