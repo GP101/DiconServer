@@ -1,7 +1,9 @@
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include <vector>
 #include <algorithm>
 #include <iostream>
+
+using namespace std::placeholders;
 
 void print(std::ostream *os, int i)
 {

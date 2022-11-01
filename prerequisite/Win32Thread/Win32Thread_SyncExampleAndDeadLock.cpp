@@ -1,9 +1,10 @@
 #include <windows.h>
 #include <stdio.h>
 #include <iostream>
+//#include <thread>
 
 HANDLE ghEvents[2];
-int g_value = 0;
+int g_value = 1;
 
 DWORD WINAPI ThreadProc(LPVOID);
 
@@ -45,16 +46,16 @@ int main(void)
         return 1;
     }
 
-    Sleep( 2000 );
+    Sleep(2000);
     // Wait for the thread to signal one of the event objects
-    while (g_value < 10) {
+    while (g_value <= 10) {
         WaitForSingleObject(
-            ghEvents[0],     // array of objects
-            INFINITE );       // five-second wait
-        std::cout << g_value << std::endl;
+            ghEvents[0],
+            INFINITE);
+        std::cout << GetCurrentThreadId() << " " << g_value << std::endl;
         g_value += 1;
-        Sleep( 1000 );
-        SetEvent( ghEvents[1] );
+        Sleep(1000);
+        SetEvent(ghEvents[1]);
     }
 
     // Close event handles
@@ -73,14 +74,15 @@ DWORD WINAPI ThreadProc(LPVOID lpParam)
 
     // Set one event to the signaled state
 
-    while (g_value < 9) {
-        std::cout << g_value << std::endl;
-        g_value += 1;
-        Sleep( 1000 );
-        SetEvent( ghEvents[0] );
+    while (g_value <= 9) {
         WaitForSingleObject(
-            ghEvents[1],     // array of objects
-            INFINITE );       // five-second wait
+            ghEvents[1],
+            INFINITE);
+        std::cout << GetCurrentThreadId() << " " << g_value << std::endl;
+        g_value += 1;
+        Sleep(1000);
+        SetEvent(ghEvents[0]);
+        //
     }
     return 0;
 }

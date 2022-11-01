@@ -13,7 +13,7 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="References">
+    <Filter Include="References Files">
       <UniqueIdentifier>{83d9bb56-b813-44cf-91bf-a92fea373455}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -22,34 +22,34 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EnumToString.h">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClInclude>
     <ClInclude Include="KFsm.h">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClInclude>
     <ClInclude Include="KGlobalSingleton.h">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClInclude>
     <ClInclude Include="KGen.h">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClInclude>
     <ClInclude Include="KPool.h">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClInclude>
     <ClInclude Include="KBaseSingleton.h">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClInclude>
     <ClInclude Include="KCriticalSection.h">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClInclude>
     <ClInclude Include="KLog.h">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClInclude>
     <ClInclude Include="KGlobalSingletonNotGood.h">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClInclude>
     <ClInclude Include="KThread.h">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -57,136 +57,139 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_packet serialization01.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_serialization.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_CriticalSection RAII.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_typeid_RTTI.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_session02.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_bind01.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_session01.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_KPool test.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_CreateInstance01.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_CreateInstance02.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_KGlobalSingleton.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest KPacket01.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest KPacket02.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest KPacket03.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest KPacket04.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest KPacket05.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest KPacket06.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest KPacket07.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_noncopyable.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_shared_ptr.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest EnumToString01.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest EnumToString02 static helper.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest EnumToString03 PRN_ENUM_TEXT_NARG.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest EnumToString04 DECLARE_ENUM.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest Fsm01.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest Fsm02.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest Fsm03 with Macros.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest Fsm04 with Inheritance.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_Endianess.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest Fsm05 with enum.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_serialization01.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_serialization02.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_serialization03.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest context coroutine.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest coroutine01.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest coroutine02 return from coroutine.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest coroutine03 passing two values.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest lockfree01.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest lockfree02.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest read write binary data.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_little endian.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_serialization00 prepare.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_bind00.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_session03.cpp">
-      <Filter>References</Filter>
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_session00.cpp">
+      <Filter>References Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

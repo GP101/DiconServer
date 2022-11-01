@@ -1,10 +1,12 @@
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include <vector>
 #include <algorithm>
 #include <iostream>
 #include <boost/shared_ptr.hpp>
 #include <queue>
 #include "KPool.h"
+
+using namespace std::placeholders;
 
 struct KPacket;
 typedef boost::shared_ptr<KPacket> KPacketPtr;

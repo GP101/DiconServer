@@ -1,10 +1,12 @@
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include <vector>
 #include <algorithm>
 #include <iostream>
 #include <boost/shared_ptr.hpp>
 #include <queue>
 #include "KCriticalSection.h"
+
+using namespace std::placeholders;
 
 struct KPacket;
 typedef boost::shared_ptr<KPacket> KPacketPtr;
@@ -63,9 +65,9 @@ private:
 class KMySession : public KSession
 {
 public:
-    virtual void OnPacket( KPacketPtr spPacket )
+    virtual void OnPacket(KPacketPtr spPacket)
     {
-        printf( "%s\r\n", __FUNCTION__ );
+        printf("%s\r\n", __FUNCTION__);
     }
 };
 
@@ -77,7 +79,7 @@ int main()
     p0.reset(new KPacket());
     p1.reset(new KPacket());
     session.AddPacket(p0);
-    session.AddPacket( p1 );
+    session.AddPacket(p1);
 
     session.Update();
 }

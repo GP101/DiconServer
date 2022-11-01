@@ -42,13 +42,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\local\boost_1_79_0;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\local\boost_1_79_0\lib32-msvc-14.3;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\local\boost_1_79_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\local\boost_1_79_0\lib32-msvc-14.3;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\local\boost_1_79_0;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\local\boost_1_79_0\lib32-msvc-14.3;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\local\boost_1_79_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\local\boost_1_79_0\lib32-msvc-14.3;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -282,6 +282,10 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="boostTest_serialization03.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="boostTest_session00.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>

@@ -14,9 +14,9 @@ struct KPacket
 class KQueue
 {
 public:
-    void AddPacket( KPacketPtr spPacket )
-    { 
-        m_queue.push( spPacket );
+    void AddPacket(KPacketPtr spPacket)
+    {
+        m_queue.push(spPacket);
     }
     void ProcessAllPacket()
     {
@@ -24,31 +24,36 @@ public:
         {
             KPacketPtr spPacket = m_queue.front();
             m_queue.pop();
-            OnPacket( spPacket );
+            OnPacket(spPacket);
         }
     }
-    void OnPacket( KPacketPtr spPacket )
+    virtual void OnPacket(KPacketPtr spPacket)
     {
     }
-private:
+protected:
     std::queue<KPacketPtr> m_queue;
 };
 
-class KSession
+class KSession : public KQueue
 {
 public:
     void Update()
     {
-        m_kQueue.ProcessAllPacket();
+        __super::ProcessAllPacket();
     }
-    void OnPacket( KPacketPtr spPacket )
+    virtual void OnPacket(KPacketPtr spPacket) override
     {
+        std::cout << __FUNCTION__ << std::endl;
     }
-private:
-    KQueue m_kQueue;
 };
 
 int main()
 {
+    KPacketPtr spPacket;
+    spPacket.reset(new KPacket());
+
     KSession session;
+    session.AddPacket(spPacket);
+    session.AddPacket(spPacket);
+    session.ProcessAllPacket();
 }
