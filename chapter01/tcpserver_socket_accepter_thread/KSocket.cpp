@@ -1,5 +1,6 @@
 #include "KSocket.h"
-#include "KCriticalSection.h"
+#include <thread>
+#include <mutex>
 
 
 CONSTRUCTOR KSocket::KSocket()
@@ -15,8 +16,9 @@ DESTRUCTOR KSocket::~KSocket()
 
 void KSocket::CloseSocket()
 {
-    CSLOCK( m_csSock )
     {
+        std::lock_guard<std::mutex> lock(m_muSock);
+
         if( m_sock != INVALID_SOCKET ) {
             ::shutdown( m_sock, SD_BOTH );
             ::closesocket( m_sock );
@@ -27,7 +29,7 @@ void KSocket::CloseSocket()
 
 bool KSocket::ReceiveData()
 {
-    KCriticalSectionLock lock( m_csSock );
+    std::lock_guard<std::mutex> lock(m_muSock);
 
     if( m_sock == INVALID_SOCKET )
         return false;
@@ -69,7 +71,7 @@ const char* KSocket::GetIpStr() const
 
 bool KSocket::SendData( const char* szData_, int iSize_ )
 {
-    KCriticalSectionLock lock( m_csSock );
+    std::lock_guard<std::mutex> lock(m_muSock);
 
     if( m_sock == INVALID_SOCKET ) {
         BEGIN_LOG( cerr, L"error" ) << END_LOG;

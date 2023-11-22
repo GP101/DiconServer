@@ -1,14 +1,14 @@
-#include <boost/bind/bind.hpp>
+#include <functional>
 #include <vector>
 #include <algorithm>
 #include <iostream>
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <queue>
 
 using namespace std::placeholders;
 
 struct KPacket;
-typedef boost::shared_ptr<KPacket> KPacketPtr;
+typedef std::shared_ptr<KPacket> KPacketPtr;
 struct KPacket
 {
 };
@@ -45,7 +45,7 @@ public:
         KPacketPtr spPacket;
         spPacket.reset(new KPacket());
         m_kQueue.AddPacket(spPacket);
-        m_kQueue.ProcessAllPacket(boost::bind(&KSession::OnPacket, this, _1));
+        m_kQueue.ProcessAllPacket(std::bind(&KSession::OnPacket, this, _1));
     }
     virtual void OnPacket(KPacketPtr spPacket)
     {

@@ -1,12 +1,12 @@
 #include "KGen.h"
-#include <boost/bind/bind.hpp>
-#include <boost/shared_ptr.hpp>
-#include <boost/noncopyable.hpp>
+#include <functional>
+#include <memory>
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include "noncopyable.h"
 
-class KTest : public boost::noncopyable
+class KTest : public noncopyable
 {
 public:
     KTest()

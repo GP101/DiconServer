@@ -5,7 +5,10 @@
 #include "KIocp.h"
 #include <iostream>
 #include "KGen.h"
-
+#include <atomic>
+#include <chrono>
+#include <condition_variable>
+#include <thread>
 
 CONSTRUCTOR KSocketAccepterThread::KSocketAccepterThread()
     : m_pfnCreateUser( NULL )
@@ -24,7 +27,7 @@ void KSocketAccepterThread::_CloseSocket()
 void KSocketAccepterThread::BindAndListen( u_short usPort_
     , CreateUserCallback pfnCreateUser_ )
 {
-    BOOST_ASSERT( GetThreadId() == 0 );
+    assert( IsRunning() == false );
 
     m_pfnCreateUser = pfnCreateUser_;
 
@@ -71,13 +74,13 @@ VIRTUAL void KSocketAccepterThread::ThreadRun()
         const DWORD dwElapsedTime = dwCurrTime - dwPrevTime;
         dwPrevTime = dwCurrTime;
 
-        const DWORD ret = ::WaitForSingleObject( m_hQuitEvent, 0 );
-        if( ret == WAIT_OBJECT_0 )
+        using namespace std::chrono_literals;
+        std::unique_lock<std::mutex> lk(m_cvMutex);
+        auto now = std::chrono::system_clock::now();
+        if (m_cvQuit.wait_until(lk, now + 1ms, [this]() { return m_quitFlag == 1; }))
             break;
-        else if( ret == WAIT_TIMEOUT )
-            VIRTUAL ThreadUpdateLoop( dwElapsedTime );
-        else
-            BEGIN_LOG( cerr, L"*** WaitForSingleObject() - return : " ) << LOG_NAMEVALUE( ret );
+
+        VIRTUAL ThreadUpdateLoop(dwElapsedTime);
     }// while
 
     BEGIN_LOG( cout, L"Exit" )

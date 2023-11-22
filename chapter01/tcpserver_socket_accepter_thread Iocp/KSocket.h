@@ -2,12 +2,13 @@
 #include "KGen.h"
 #include <ws2tcpip.h>
 #include <vector>
-#include <boost/utility.hpp>
+#include "noncopyable.h"
 #include "KOverlapped.h"
-#include "KCriticalSection.h"
+#include <thread>
+#include <mutex>
 
 
-class KSocket : public boost::noncopyable
+class KSocket : public noncopyable
 {
     friend class KIocp;
 
@@ -57,5 +58,5 @@ protected:
     KOverlapped         m_ovlReceive;
     KOverlapped         m_ovlSend;
     SOCKET              m_sock;
-    KCriticalSection    m_csSock;
+    std::mutex          m_muSock;
 };

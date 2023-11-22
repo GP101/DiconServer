@@ -5,14 +5,14 @@
 #include <stdarg.h>
 #include <vector>
 #include <algorithm>
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <map>
-#include "KCriticalSection.h"
+#include "KGen.h"
 #include "EnumToString.h"
 
 
 class KFsmState;
-typedef boost::shared_ptr<KFsmState>    KFsmStatePtr;
+typedef std::shared_ptr<KFsmState>    KFsmStatePtr;
 
 class KFsmState
 {
@@ -76,7 +76,7 @@ private:
 
 
 class KFsm;
-typedef boost::shared_ptr<KFsm>     KFsmPtr;
+typedef std::shared_ptr<KFsm>     KFsmPtr;
 
 class KFsm
 {
@@ -177,29 +177,28 @@ class KFsmBase
 public:
     void                SetFsm( KFsmPtr& spFSM )
                         {
-                            KCriticalSectionLock lock( m_csFsm );
+                            std::lock_guard<std::mutex> lock(m_muFsm);
                             m_spFsm = spFSM;
                         }
     KFsmPtr             GetFsm()
                         {
-                            KCriticalSectionLock lock( m_csFsm );
+                            std::lock_guard<std::mutex> lock(m_muFsm);
                             return m_spFsm;
                         }
     int                 GetStateId() const
                         {
-                            KCriticalSectionLock lock( m_csFsm );
+                            std::lock_guard<std::mutex> lock(m_muFsm);
                             return m_spFsm->GetCurrentState()->GetStateId();
                         }
     bool                StateTransition( int nInput )
                         {
-                            KCriticalSectionLock lock( m_csFsm );
+                            std::lock_guard<std::mutex> lock(m_muFsm);
                             const int iState = m_spFsm->DoTransition(nInput);
                             return iState != KFsmState::INVALID_STATE;
                         }
 
 protected:
-    mutable KCriticalSection
-                        m_csFsm;
+    mutable std::mutex  m_muFsm;
     KFsmPtr             m_spFsm;
 };
 
@@ -207,27 +206,27 @@ protected:
     public: \
         void SetFsm( KFsmPtr& spFSM ) \
         { \
-            KCriticalSectionLock lock( m_cs ); \
+            std::lock_guard<std::mutex> lock(m_muFsm); \
             m_spFsm = spFSM; \
         } \
         KFsmPtr GetFsm() \
         { \
-            KCriticalSectionLock lock( m_cs ); \
+            std::lock_guard<std::mutex> lock(m_muFsm); \
             return m_spFsm; \
         } \
         int GetStateId() \
         { \
-            KCriticalSectionLock lock( m_cs ); \
+            std::lock_guard<std::mutex> lock(m_muFsm); \
             return m_spFsm->GetCurrentState()->GetStateId(); \
         } \
         bool StateTransition( int nInput ) \
         { \
-            KCriticalSectionLock lock( m_cs ); \
+            std::lock_guard<std::mutex> lock(m_muFsm); \
             const int iState = m_spFsm->DoTransition( nInput ); \
             return iState != KFsmState::INVALID_STATE; \
         } \
 protected: \
-    mutable KCriticalSection      m_cs;   \
+    mutable std::mutex  m_muFsm;   \
     KFsmPtr             m_spFsm
 
 

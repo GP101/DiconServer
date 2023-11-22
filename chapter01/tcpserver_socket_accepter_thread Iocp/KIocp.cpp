@@ -2,10 +2,9 @@
 #include "KIocp.h"
 #include "KGen.h"
 #include "KIocpWorkerThread.h"
-#include <boost/bind.hpp>
+#include <functional>
 #undef max
-#include <boost/random.hpp>
-
+#include <random>
 
 CONSTRUCTOR KIocp::KIocp() 
     : m_hIocp( NULL )
@@ -14,7 +13,7 @@ CONSTRUCTOR KIocp::KIocp()
 
 DESTRUCTOR KIocp::~KIocp()
 { 
-    BOOST_ASSERT( m_hIocp == NULL );
+    assert( m_hIocp == NULL );
 }
 
 bool KIocp::Initialize( DWORD nThreadNum_ )
@@ -55,8 +54,9 @@ bool KIocp::BindSocket( KSocket* pkSockObj )
     if( pkSockObj == NULL )
         return false;
 
-    CSLOCK( m_csSockObj )
     {
+        std::lock_guard<std::recursive_mutex> lock(m_muSockObj);
+
         const DWORD dwCompletionKey = GenNewCompletionKey();
         HANDLE hPort = CreateIoCompletionPort( (HANDLE)pkSockObj->m_sock, m_hIocp, dwCompletionKey, 0 );
         if( hPort != NULL ) {
@@ -71,8 +71,9 @@ bool KIocp::BindSocket( KSocket* pkSockObj )
 
 void KIocp::DeleteCompletionKey( KSocket* pkSockObj_ )
 {
-    CSLOCK( m_csSockObj )
     {
+        std::lock_guard<std::recursive_mutex> lock(m_muSockObj);
+
         m_mapSocketObject.erase( pkSockObj_->GetKey() );
         pkSockObj_->SetKey( KSocket::SOCKEY_NULL_KEY );
     }
@@ -80,14 +81,17 @@ void KIocp::DeleteCompletionKey( KSocket* pkSockObj_ )
 
 DWORD KIocp::GenNewCompletionKey() const
 {
-    static boost::mt19937 rng;
-    static boost::uniform_int<DWORD> uint32( 1, UINT_MAX );
-    static boost::variate_generator<boost::mt19937&, boost::uniform_int<DWORD> > dice( rng, uint32 );
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> dist(1, UINT_MAX);
 
-    CSLOCK( m_csSockObj )
+    std::cout << dist(rng) << std::endl;
+
     {
+        std::lock_guard<std::recursive_mutex> lock(m_muSockObj);
+
         while( true ) {
-            const DWORD dwCompletionKey = dice();
+            const DWORD dwCompletionKey = dist(rng);
             if( m_mapSocketObject.find( dwCompletionKey ) == m_mapSocketObject.end() )
                 return dwCompletionKey;
         }
@@ -128,7 +132,7 @@ void KIocp::OnClosedByLocal( IN DWORD dwKey_ )
 
 KSocket* KIocp::_GetSockObject( DWORD dwKey_ )
 {
-    KCriticalSectionLock lock( m_csSockObj );
+    std::lock_guard<std::recursive_mutex> lock(m_muSockObj);
 
     auto mit = m_mapSocketObject.find( dwKey_ );
 
@@ -176,6 +180,6 @@ void KIocp::OnIoCompleted( DWORD dwKey_, DWORD dwBytesTransferred_, IN OVERLAPPE
 
 size_t KIocp::GetNumSocketObject() const
 { 
-    KCriticalSectionLock lock( m_csSockObj );
+    std::lock_guard<std::recursive_mutex> lock(m_muSockObj);
     return m_mapSocketObject.size(); 
 }

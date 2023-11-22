@@ -33,16 +33,7 @@
     <ClInclude Include="KGen.h">
       <Filter>References Files</Filter>
     </ClInclude>
-    <ClInclude Include="KPool.h">
-      <Filter>References Files</Filter>
-    </ClInclude>
     <ClInclude Include="KBaseSingleton.h">
-      <Filter>References Files</Filter>
-    </ClInclude>
-    <ClInclude Include="KCriticalSection.h">
-      <Filter>References Files</Filter>
-    </ClInclude>
-    <ClInclude Include="KLog.h">
       <Filter>References Files</Filter>
     </ClInclude>
     <ClInclude Include="KGlobalSingletonNotGood.h">
@@ -51,13 +42,13 @@
     <ClInclude Include="KThread.h">
       <Filter>References Files</Filter>
     </ClInclude>
+    <ClInclude Include="noncopyable.h">
+      <Filter>References Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="boostTest.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest_packet serialization01.cpp">
-      <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_serialization.cpp">
       <Filter>References Files</Filter>
@@ -75,9 +66,6 @@
       <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_session01.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest_KPool test.cpp">
       <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_CreateInstance01.cpp">
@@ -150,27 +138,6 @@
       <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_serialization02.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest_serialization03.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest context coroutine.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest coroutine01.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest coroutine02 return from coroutine.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest coroutine03 passing two values.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest lockfree01.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest lockfree02.cpp">
       <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest read write binary data.cpp">

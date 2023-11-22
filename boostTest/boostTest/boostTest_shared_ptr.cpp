@@ -1,12 +1,12 @@
-#include <boost/bind/bind.hpp>
+#include <functional>
 #include <vector>
 #include <algorithm>
 #include <iostream>
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <queue>
 
 struct KPacket;
-typedef boost::shared_ptr<KPacket> KPacketPtr;
+typedef std::shared_ptr<KPacket> KPacketPtr;
 struct KPacket
 {
 };

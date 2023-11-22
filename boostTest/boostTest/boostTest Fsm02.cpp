@@ -1,4 +1,4 @@
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -20,7 +20,7 @@ void main()
 
 	KFsmStatePtr spCurrentState = stateMachine.GetCurrentState();
 	printf("state %i\r\n", spCurrentState->GetStateId()); // 0
-	stateMachine.DoTransition(10); 
+	stateMachine.DoTransition(10);
 	spCurrentState = stateMachine.GetCurrentState();
 	printf("state %i\r\n", spCurrentState->GetStateId()); // 1
 	int iState = stateMachine.DoTransition(20);

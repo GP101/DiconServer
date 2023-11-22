@@ -19,13 +19,13 @@ public:
     void                BeginAllThread();
     void                EndAllThread();
 
-    size_t              GetThreadNum() const { KCriticalSectionLock lock( m_csVecThread ); return m_vecThread.size(); }
+    size_t              GetThreadNum() const { std::lock_guard<std::mutex> lock(m_muVecThread); return m_vecThread.size(); }
     void                SetNumThread( size_t nThreadNum ); // dynamically change number of threads
 
 protected:      
     virtual KThread*    CreateThread() = 0;
 
-    std::vector<boost::shared_ptr<KThread>>
+    std::vector<std::shared_ptr<KThread>>
                         m_vecThread;
-    KCriticalSection    m_csVecThread;
+    mutable std::mutex  m_muVecThread;
 };

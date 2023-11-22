@@ -4,8 +4,8 @@
 
 
 class KUser;
-typedef boost::shared_ptr<KUser> KUserPtr;
-class KUser : public boost::noncopyable
+typedef std::shared_ptr<KUser> KUserPtr;
+class KUser : public noncopyable
 {
 public:
     KUser() { m_pSocket = new KSocket();  }

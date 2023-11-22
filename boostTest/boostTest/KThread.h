@@ -2,8 +2,11 @@
 #include "KGen.h"
 #include <string>
 #include <map>
-#include "KCriticalSection.h"
 #include <process.h>
+#include <thread>
+#include <utility>
+#include <atomic>
+#include <condition_variable>
 
 #pragma comment( lib, "Winmm" )
 
@@ -14,69 +17,49 @@ class KThread
 
 public:
     CONSTRUCTOR         KThread() 
-                            : m_hQuitEvent( NULL )
-                            , m_hThreadEvent( NULL )
                         {
                         }
 
     virtual             ~KThread()
                         {
-                            //EndThread( 3000 );
-                            BOOST_ASSERT( GetThreadId() == 0 );
+                            assert(m_thread.joinable() == false );
                         }
 
     virtual bool        BeginThread()
                         {
-                            if( m_hThreadEvent != NULL )
+                            if (m_thread.joinable())
                                 return false;
-
-                            m_hQuitEvent = CreateEvent(NULL, false, false, NULL);
-                            if( NULL == m_hQuitEvent )
-                                return false;
-
-                            m_hThreadEvent = (HANDLE)_beginthreadex( NULL, 0, (PTHREAD_START)ThreadProc
-                                , (void*)this, 0, OUT (unsigned*)&m_dwThreadId );
-
-                            if( NULL == m_hThreadEvent ) {
-                                ::CloseHandle( m_hQuitEvent);
-                                m_hQuitEvent = NULL;
-                                return false;
-                            } // if
-
+                            m_thread = std::thread(ThreadProc, reinterpret_cast<int>(this));
+                            m_threadId = m_thread.get_id();
                             return true;
                         }
 
     virtual void        EndThread( DWORD dwTimeout_ )
                         {
-                            if( NULL != m_hThreadEvent ) {
-                                SetEvent( m_hQuitEvent );
-                                ::WaitForSingleObject( m_hThreadEvent, dwTimeout_ );
-                                ::CloseHandle( m_hThreadEvent );
-                                m_hThreadEvent = NULL;
-                                m_dwThreadId = 0;
+                            if (m_thread.joinable()) {
+                                m_quitFlag = 1;
+                                m_cvQuit.notify_all();
+                                m_thread.join();
                             }
-                            if( m_hQuitEvent != NULL ) {
-                                ::CloseHandle( m_hQuitEvent );
-                                m_hQuitEvent = NULL;
-                            }
-                        }
+    }
     
     virtual void        ThreadRun() = 0;
     
-    DWORD               GetThreadId() const { return m_dwThreadId; }
+    std::thread::id     GetThreadId() const { return m_threadId; }
+    bool                IsRunning() const { return m_thread.joinable(); }
 
 protected:
-    static unsigned int WINAPI 
-                        ThreadProc( LPVOID pvParam_ )
+    static void         ThreadProc( int pvParam_ )
                         {
                             KThread* pThread = reinterpret_cast<KThread*>( pvParam_ );
-                            BOOST_ASSERT( pThread != nullptr );
+                            assert( pThread != nullptr );
                             pThread->ThreadRun();
-                            return true;
                         }
     
 protected:
-    HANDLE              m_hQuitEvent;
-    HANDLE              m_hThreadEvent;
-    DWORD               m_dwThreadId = 0;
+    std::condition_variable m_cvQuit;
+    std::mutex          m_cvMutex;
+    std::atomic<int>    m_quitFlag{ 0 };
+    std::thread::id     m_threadId;
+    std::thread         m_thread;
 };

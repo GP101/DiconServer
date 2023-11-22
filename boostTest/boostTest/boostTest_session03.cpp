@@ -1,15 +1,15 @@
-#include <boost/bind/bind.hpp>
+#include <functional>
 #include <vector>
 #include <algorithm>
 #include <iostream>
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <queue>
-#include "KCriticalSection.h"
+#include <mutex>
 
 using namespace std::placeholders;
 
 struct KPacket;
-typedef boost::shared_ptr<KPacket> KPacketPtr;
+typedef std::shared_ptr<KPacket> KPacketPtr;
 struct KPacket
 {
 };
@@ -19,7 +19,7 @@ class KQueue
 public:
     void AddPacket(KPacketPtr spPacket)
     {
-        KCriticalSectionLock lock(m_csQueue);
+        std::lock_guard<std::mutex> lock(m_muQueue);
         m_queue.push(spPacket);
     }
     template<typename FUNCTOR>
@@ -29,7 +29,7 @@ public:
         {
             KPacketPtr spPacket;
             {
-                KCriticalSectionLock lock(m_csQueue);
+                std::lock_guard<std::mutex> lock(m_muQueue);
                 if (m_queue.empty())
                     break;
                 spPacket = m_queue.front();
@@ -40,7 +40,7 @@ public:
     }
 private:
     std::queue<KPacketPtr>  m_queue;
-    KCriticalSection        m_csQueue;
+    std::mutex              m_muQueue;
 };
 
 class KSession
@@ -52,7 +52,7 @@ public:
     }
     void Update()
     {
-        m_kQueue.ProcessAllPacket(boost::bind(&KSession::OnPacket, this, _1));
+        m_kQueue.ProcessAllPacket(std::bind(&KSession::OnPacket, this, _1));
     }
     virtual void OnPacket(KPacketPtr spPacket)
     {

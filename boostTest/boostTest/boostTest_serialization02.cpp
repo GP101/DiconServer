@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <boost/archive/binary_oarchive.hpp>
-#include <boost/archive/binary_iarchive.hpp>
+#include <cereal/archives/binary.hpp>
+#include <cereal/types/string.hpp>
+#include <cereal/types/vector.hpp>
 #include <sstream>
 
 #pragma pack(push,1)
@@ -13,8 +14,8 @@ struct KData
 	template <typename Archive>
 	void serialize(Archive& ar, const unsigned int version)
 	{
-		ar & m_cData;
-		ar & m_fData;
+		ar& m_cData;
+		ar& m_fData;
 	}
 };
 
@@ -27,13 +28,12 @@ void main()
 	d.m_fData = 2.3f;
 
 	std::stringstream ss;
-	boost::archive::binary_oarchive oa(ss);
+	cereal::BinaryOutputArchive oa(ss);
 	oa << d;
 
 	std::cout << ss.str() << std::endl;
 
 	KData d2;
-	boost::archive::binary_iarchive ia(ss);
+	cereal::BinaryInputArchive ia(ss);
 	ia >> d2;
-
 }

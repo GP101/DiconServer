@@ -2,11 +2,11 @@
 #include "KGen.h"
 #include <ws2tcpip.h>
 #include <vector>
-#include <boost/utility.hpp>
-#include "KCriticalSection.h"
+#include "noncopyable.h"
+#include <thread>
+#include <mutex>
 
-
-class KSocket : public boost::noncopyable
+class KSocket : public noncopyable
 {
     static const int    MAX_PACKET_SIZE = 1024 * 16; // 16K
 
@@ -40,5 +40,5 @@ protected:
     char                m_pBufferSend[MAX_PACKET_SIZE];
 
     SOCKET              m_sock;
-    KCriticalSection    m_csSock;
+    std::mutex          m_muSock;
 };

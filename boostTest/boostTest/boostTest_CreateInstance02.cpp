@@ -1,6 +1,6 @@
 #include "KGen.h"
-#include <boost/bind/bind.hpp>
-#include <boost/shared_ptr.hpp>
+#include <functional>
+#include <memory>
 #include <vector>
 #include <algorithm>
 #include <iostream>
@@ -10,7 +10,7 @@
 class KBaseLayer : public KBaseSingleton<KBaseLayer>
 {
 public:
-    void Test() 
+    void Test()
     {
         std::cout << __FUNCTION__ << std::endl;
     }
@@ -22,13 +22,13 @@ public:
 class KMyLayer : public KBaseLayer
 {
 public:
-    void Test2() 
+    void Test2()
     {
         std::cout << __FUNCTION__ << std::endl;
     }
 };
 
-#define _KMyLayer     (boost::static_pointer_cast<KMyLayer,KBaseLayer>(KBaseLayer::Instance()))
+#define _KMyLayer     (std::static_pointer_cast<KMyLayer,KBaseLayer>(KBaseLayer::Instance()))
 
 
 void main()

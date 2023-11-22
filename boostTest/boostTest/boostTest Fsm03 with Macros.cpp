@@ -1,9 +1,8 @@
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <vector>
-#include "KLog.h"
 #include "KFsm.h"
 
 class KNetLayer
@@ -39,7 +38,7 @@ void KNetLayer::Update()
 
 void main()
 {
-    boost::shared_ptr<KNetLayer>    spNetLayer;
+    std::shared_ptr<KNetLayer>    spNetLayer;
     spNetLayer.reset(new KNetLayer());
     spNetLayer->Update();
 }//main()

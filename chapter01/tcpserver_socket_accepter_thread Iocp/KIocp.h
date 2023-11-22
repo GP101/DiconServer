@@ -3,6 +3,7 @@
 #include <windows.h>
 #include "KThreadManager.h"
 #include "KGlobalSingleton.h"
+#include <mutex>
 
 
 class KSocket;
@@ -49,7 +50,8 @@ private:
     DWORD               GenNewCompletionKey() const;
 
     HANDLE              m_hIocp;
-    KCriticalSection    m_csSockObj;
+    mutable std::recursive_mutex
+                        m_muSockObj;
     std::map<DWORD, KSocket*>
                         m_mapSocketObject;
 };

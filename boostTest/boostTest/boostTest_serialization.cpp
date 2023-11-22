@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <boost/archive/text_oarchive.hpp>
-#include <boost/archive/text_iarchive.hpp>
+#include <cereal/archives/binary.hpp>
+#include <cereal/types/string.hpp>
+#include <cereal/types/vector.hpp>
 #include <sstream>
 
 #pragma pack(push,1)
@@ -27,13 +28,12 @@ void main()
     d.m_fData = 2.3f;
 
     std::stringstream ss;
-    boost::archive::text_oarchive oa( ss );
+    cereal::BinaryOutputArchive oa(ss);
     oa << d;
 
     //std::cout << ss.str() << std::endl;
 
     KData d2;
-    boost::archive::text_iarchive ia( ss );
+    cereal::BinaryInputArchive ia(ss);
     ia >> d2;
-
 }

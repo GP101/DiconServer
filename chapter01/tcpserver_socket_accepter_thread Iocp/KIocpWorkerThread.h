@@ -1,12 +1,12 @@
 #pragma once
 #include <vector>
 #include <atltime.h>
-#include "KCriticalSection.h"
+#include <mutex>
 #include "KThread.h"
 
 
 class KIocpWorkerThread; 
-typedef boost::shared_ptr<KIocpWorkerThread> KIocpWorkerThreadPtr;
+typedef std::shared_ptr<KIocpWorkerThread> KIocpWorkerThreadPtr;
 
 class KIocpWorkerThread : public KThread
 {

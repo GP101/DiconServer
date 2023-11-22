@@ -1,9 +1,8 @@
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <vector>
-#include "KLog.h"
 #include "KFsm.h"
 
 #define VERIFY_STATE2( ... ) \
@@ -17,7 +16,7 @@
 
 class KNetLayer : public KFsmBase
 {
-    DECLARE_ENUM( ENetState,
+    DECLARE_ENUM(ENetState,
         NET_STATE_IDLE,
         NET_STATE_MAIN
     );
@@ -55,7 +54,7 @@ void KNetLayer::Update()
 
 void main()
 {
-    boost::shared_ptr<KNetLayer>    spNetLayer;
+    std::shared_ptr<KNetLayer>    spNetLayer;
     spNetLayer.reset(new KNetLayer());
     spNetLayer->Update();
 }//main()

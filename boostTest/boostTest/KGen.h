@@ -1,13 +1,17 @@
 #pragma once
+#pragma warning( disable: 4819 ) // Save the file in Unicode format to prevent data loss
 #define _WINSOCKAPI_
 #include <windows.h>
 #include <cassert>
 #include <stdio.h>
 #include <conio.h>
 #include <iostream>
-#include <boost/noncopyable.hpp>
-#include <boost/shared_ptr.hpp>
-#include <atltime.h> // for CTime
+#include <atltime.h>
+#include "noncopyable.h"
+#include <memory>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
 
 #ifndef COMMA
 #define COMMA()         ,

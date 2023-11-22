@@ -1,5 +1,4 @@
 #pragma once
-#include <boost/assert.hpp>
 #include "KGen.h"
 
 struct KCriticalSection : public CRITICAL_SECTION
@@ -14,7 +13,7 @@ public:
     CONSTRUCTOR         KCriticalSectionLock( CRITICAL_SECTION& cs ) : m_pcs( &cs )
                         {
                             //printf( "constructor\r\n" );
-                            BOOST_ASSERT( m_pcs != nullptr );
+                            assert( m_pcs != nullptr );
                             EnterCriticalSection( m_pcs );
                         }
 

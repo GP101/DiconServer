@@ -1,9 +1,7 @@
-#include <boost/serialization/vector.hpp>
-#include <boost/serialization/string.hpp>
-#include <boost/serialization/version.hpp>
-#include <boost/archive/text_oarchive.hpp>
-#include <boost/archive/text_iarchive.hpp>
-#include <boost/shared_ptr.hpp>
+#include <cereal/archives/binary.hpp>
+#include <cereal/types/string.hpp>
+#include <cereal/types/vector.hpp>
+#include <memory>
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -55,7 +53,7 @@ void serialize(Archive& ar, KPacketLogin& a, const unsigned int version)
 
 #pragma pack( push, 1 )
 class KPacket;
-typedef boost::shared_ptr<KPacket>  KPacketPtr;
+typedef std::shared_ptr<KPacket>  KPacketPtr;
 class KPacket
 {
 public:
@@ -75,7 +73,7 @@ void KPacket::SetData(unsigned int nSenderUID, unsigned short usPacketId, const 
 	m_usPacketId = usPacketId;
 
 	std::stringstream   ss;
-	boost::archive::text_oarchive oa{ ss };
+	cereal::BinaryOutputArchive oa(ss); // Create an output archive
 	oa << data_;
 
 	std::string& str = ss.str();
@@ -95,7 +93,7 @@ void serialize(Archive& ar, KPacket& a, const unsigned int version)
 template <typename T>
 void BufferToPacket(IN std::stringstream& ss_, OUT T& packet_)
 {
-	boost::archive::text_iarchive ia{ ss_ };
+	cereal::BinaryInputArchive ia(ss_);
 	ia >> packet_;
 }//BufferToPacket()
 
@@ -116,19 +114,19 @@ void BufferToPacket(IN std::vector<char>& buffer, OUT T& data)
 	// alternative (slow) implementation. jintaeks on 2017-08-24_20-08
 	//std::stringstream ss;
 	//std::copy(buffer.begin(), buffer.end(), std::ostream_iterator<char>(ss));
-	//boost::archive::text_iarchive ia{ ss };
+	//cereal::BinaryInputArchive ia(ss);
 	//ia >> data;
 
 	vectorwrapbuf<char> databuf(buffer);
 	std::istream is(&databuf);
-	boost::archive::text_iarchive ia{ is };
+	cereal::BinaryInputArchive ia(is);
 	ia >> data;
 }//BufferToPacket()
 
 template<typename T>
 void PacketToBuffer(IN T& packet_, OUT std::stringstream& ss_)
 {
-	boost::archive::text_oarchive oa{ ss_ };
+	cereal::BinaryOutputArchive oa(ss_);
 	oa << packet_;
 }//PacketToBuffer()
 
@@ -136,7 +134,7 @@ template<typename T>
 void PacketToBuffer(IN T& packet_, OUT std::vector<char>& buffer_)
 {
 	std::stringstream   ss;
-	boost::archive::text_oarchive oa{ ss };
+	cereal::BinaryOutputArchive oa(ss);
 	oa << packet_;
 
 	// set [out] parameter

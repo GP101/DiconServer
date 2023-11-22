@@ -5,7 +5,7 @@
 
 
 class KSocketAccepterThread;
-typedef boost::shared_ptr<KSocketAccepterThread> KSocketAccepterPtr;
+typedef std::shared_ptr<KSocketAccepterThread> KSocketAccepterPtr;
 class KSocket;
 
 class KSocketAccepterThread : public KThread
