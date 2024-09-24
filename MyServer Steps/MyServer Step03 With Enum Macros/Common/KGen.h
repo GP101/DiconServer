@@ -7,7 +7,7 @@
 #include <conio.h>
 #include <iostream>
 #include <atltime.h>
-#include <boost/noncopyable.hpp>
+#include "noncopyable.h"
 #include <memory>
 
 #ifndef COMMA

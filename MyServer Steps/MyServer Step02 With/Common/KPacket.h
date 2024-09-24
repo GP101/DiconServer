@@ -8,7 +8,6 @@
 #include <sstream>
 #include "NetUtil.h"
 #include "KGen.h"
-#include "KPool.h"
 
 enum EPacketIds
 {
@@ -68,7 +67,7 @@ public:
 
 class KPacket;
 typedef std::shared_ptr<KPacket>  KPacketPtr;
-class KPacket : public KPool<KPacket>
+class KPacket// : public KPool<KPacket>
 {
 public:
                         KPacket();

@@ -2,15 +2,14 @@
 #include "KGen.h"
 #include <vector>
 #include <string>
-#include <boost/enable_shared_from_this.hpp>
-#include <boost/noncopyable.hpp>
+#include "noncopyable.h"
 #include "NetUtil.h"
 
 
 /// base class for server object.
 class KServerObject
-    : public boost::enable_shared_from_this<KServerObject>
-    , public boost::noncopyable
+    : public std::enable_shared_from_this<KServerObject>
+    , public noncopyable
 {
 public:
                         KServerObject() : m_nUid( 0 )

@@ -123,7 +123,6 @@
     <ClInclude Include="..\Common\KNetLayer.h" />
     <ClInclude Include="..\Common\KOverlapped.h" />
     <ClInclude Include="..\Common\KPacket.h" />
-    <ClInclude Include="..\Common\KPool.h" />
     <ClInclude Include="..\Common\KServerObject.h" />
     <ClInclude Include="..\Common\KSession.h" />
     <ClInclude Include="..\Common\KSessionSocket.h" />
@@ -138,6 +137,7 @@
     <ClInclude Include="..\Common\NetError.h" />
     <ClInclude Include="..\Common\NetError.inc" />
     <ClInclude Include="..\Common\NetUtil.h" />
+    <ClInclude Include="..\Common\noncopyable.h" />
     <ClInclude Include="..\Common\Packet.inc" />
     <ClInclude Include="..\Common\CommonPacket.h" />
     <ClInclude Include="KMyDBThread.h" />
