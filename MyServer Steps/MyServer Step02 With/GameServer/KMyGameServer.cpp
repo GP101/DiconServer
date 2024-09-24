@@ -1,5 +1,4 @@
 #include <WinSock2.h>
-#include <boost/bind/bind.hpp>
 #include <sstream>
 #include <iomanip>
 #include "KMyGameServer.h"

@@ -7,7 +7,7 @@
 #include "KCriticalSection.h"
 
 
-class KSocket : public boost::noncopyable
+class KSocket : public noncopyable
 {
     friend class KIocp;
 
