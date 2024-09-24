@@ -22,7 +22,7 @@ CONSTRUCTOR KSession::KSession()
 
 DESTRUCTOR KSession::~KSession()
 {
-    BOOST_ASSERT( m_kSessionSocket.IsConnected() == false );
+    assert( m_kSessionSocket.IsConnected() == false );
 }
 
 VIRTUAL bool KSession::Initialize( DWORD dwParam_ )

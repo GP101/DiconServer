@@ -24,7 +24,7 @@ public:
     virtual             ~KThread()
                         {
                             //EndThread( 3000 );
-                            BOOST_ASSERT( GetThreadId() == 0 );
+                            assert( GetThreadId() == 0 );
                         }
 
     virtual bool        BeginThread()
@@ -73,7 +73,7 @@ protected:
                         ThreadProc( LPVOID pvParam_ )
                         {
                             KThread* pThread = reinterpret_cast<KThread*>( pvParam_ );
-                            BOOST_ASSERT( pThread != nullptr );
+                            assert( pThread != nullptr );
                             pThread->ThreadRun();
                             return true;
                         }

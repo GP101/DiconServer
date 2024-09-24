@@ -1,5 +1,4 @@
 #pragma once
-#include <boost/scoped_ptr.hpp>
 #include "KThread.h"
 #include "KWorkQueue.h"
 #include "CommonPacket.h"

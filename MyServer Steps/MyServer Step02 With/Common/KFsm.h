@@ -5,13 +5,13 @@
 #include <stdarg.h>
 #include <vector>
 #include <algorithm>
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <map>
 #include "KCriticalSection.h"
 
 
 class KFsmState;
-typedef boost::shared_ptr<KFsmState>    KFsmStatePtr;
+typedef std::shared_ptr<KFsmState>    KFsmStatePtr;
 
 class KFsmState
 {
@@ -67,7 +67,7 @@ private:
 
 
 class KFsm;
-typedef boost::shared_ptr<KFsm>     KFsmPtr;
+typedef std::shared_ptr<KFsm>     KFsmPtr;
 
 class KFsm
 {

@@ -15,7 +15,7 @@ CONSTRUCTOR KIocp::KIocp()
 
 DESTRUCTOR KIocp::~KIocp()
 { 
-    BOOST_ASSERT( m_hIocp == NULL );
+    assert( m_hIocp == NULL );
 }
 
 bool KIocp::Initialize( DWORD nThreadNum_ )

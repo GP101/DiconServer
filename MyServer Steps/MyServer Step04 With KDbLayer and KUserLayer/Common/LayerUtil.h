@@ -1,6 +1,6 @@
 #pragma once
 #include "KGen.h"
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 
 class KThread;
@@ -14,7 +14,7 @@ struct KDbLayerInitParam
 };
 
 class KUser;
-typedef boost::shared_ptr<KUser> (*CreateUserCallback)();
+typedef std::shared_ptr<KUser> (*CreateUserCallback)();
 struct KNetLayerInitParam
 {
     CreateUserCallback  pfnCreateUserCallback;
@@ -22,7 +22,7 @@ struct KNetLayerInitParam
 };
 
 class KFsm;
-typedef boost::shared_ptr<KFsm> (*CreateFsmCallback)();
+typedef std::shared_ptr<KFsm> (*CreateFsmCallback)();
 struct KUserLayerInitParam
 {
     CreateUserCallback  pfnCreateUserCallback;

@@ -1,5 +1,4 @@
 #pragma once
-#include <boost/scoped_ptr.hpp>
 #include "KThread.h"
 #include "KWorkQueue.h"
 #include "CommonPacket.h"
@@ -8,7 +7,7 @@
 
 
 class KUser;
-typedef boost::shared_ptr<KUser> (*CreateUserCallback)();
+typedef std::shared_ptr<KUser> (*CreateUserCallback)();
 struct KServerInitParam
 {
     CreateUserCallback  pfnCreateUserCallback;

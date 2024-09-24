@@ -8,7 +8,7 @@
 #include <iostream>
 #include <atltime.h>
 #include <boost/noncopyable.hpp>
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 #ifndef COMMA
 #define COMMA()         ,

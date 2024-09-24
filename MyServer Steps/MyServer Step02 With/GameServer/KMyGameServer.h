@@ -3,7 +3,7 @@
 
 
 class KMyGameServer;
-typedef boost::shared_ptr<KMyGameServer>    KMyGameServerPtr;
+typedef std::shared_ptr<KMyGameServer>    KMyGameServerPtr;
 
 class KMyGameServer : public KBaseServer
 {
@@ -23,4 +23,4 @@ public:
     virtual void        Update(DWORD dwElapsedTime_) override;
 };
 
-#define _KMyGameServer  boost::static_pointer_cast<KMyGameServer, KBaseServer>( KBaseServer::Instance() )
+#define _KMyGameServer  std::static_pointer_cast<KMyGameServer, KBaseServer>( KBaseServer::Instance() )

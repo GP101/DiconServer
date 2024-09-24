@@ -15,13 +15,13 @@ CONSTRUCTOR KUserLayer::KUserLayer()
 DESTRUCTOR KUserLayer::~KUserLayer()
 {
     BEGIN_LOG( cout, L"~KUserLayer" );
-    BOOST_ASSERT( GetThreadId() == 0 );
+    assert( GetThreadId() == 0 );
 }
 
 bool KUserLayer::Initialize( DWORD dwParam_ )
 {
     KUserLayerInitParam* pInitParam = reinterpret_cast<KUserLayerInitParam*>( dwParam_ );
-    BOOST_ASSERT( pInitParam != nullptr );
+    assert( pInitParam != nullptr );
 
     VIRTUAL BeginThread();
 

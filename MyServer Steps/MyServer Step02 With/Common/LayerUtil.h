@@ -1,10 +1,10 @@
 #pragma once
 #include "KGen.h"
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 
 class KUser;
-typedef boost::shared_ptr<KUser> (*CreateUserCallback)();
+typedef std::shared_ptr<KUser> (*CreateUserCallback)();
 struct KNetLayerInitParam
 {
     CreateUserCallback  pfnCreateUserCallback;

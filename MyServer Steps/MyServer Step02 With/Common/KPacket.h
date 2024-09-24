@@ -4,7 +4,7 @@
 #include <boost/serialization/version.hpp>
 #include <boost/archive/text_oarchive.hpp>
 #include <boost/archive/text_iarchive.hpp>
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <sstream>
 #include "NetUtil.h"
 #include "KGen.h"
@@ -67,7 +67,7 @@ public:
 #pragma pack( push, 1 )
 
 class KPacket;
-typedef boost::shared_ptr<KPacket>  KPacketPtr;
+typedef std::shared_ptr<KPacket>  KPacketPtr;
 class KPacket : public KPool<KPacket>
 {
 public:

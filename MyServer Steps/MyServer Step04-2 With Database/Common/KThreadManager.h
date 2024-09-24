@@ -43,7 +43,7 @@ protected:
 
     KWorkQueue          m_workQueue; // this queue is shared between threads
 
-    std::vector<boost::shared_ptr<KThread>>
+    std::vector<std::shared_ptr<KThread>>
                         m_vecThread;
     KCriticalSection    m_csVecThread;
 };

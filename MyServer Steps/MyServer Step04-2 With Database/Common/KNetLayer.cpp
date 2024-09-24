@@ -83,7 +83,7 @@ bool KNetLayer::Initialize( DWORD dwParam_ )
     //// initialize Iocp
 
     KNetLayerInitParam* pInitParam = reinterpret_cast<KNetLayerInitParam*>( dwParam_ );
-    BOOST_ASSERT( pInitParam != nullptr );
+    assert( pInitParam != nullptr );
 
     m_kSocketAccepterThread.BindAndListen( m_usDefaultPort, pInitParam->pfnCreateUserCallback );
 

@@ -26,7 +26,7 @@ void KSocketAccepterThread::BindAndListen( u_short usPort_
     , CreateUserCallback pfnCreateUser_
     , bool bNagleAlgOn_ )
 {
-    BOOST_ASSERT( GetThreadId() == 0 );
+    assert( GetThreadId() == 0 );
 
     m_pfnCreateUser = pfnCreateUser_;
 

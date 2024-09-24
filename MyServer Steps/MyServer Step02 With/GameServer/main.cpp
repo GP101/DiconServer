@@ -1,5 +1,5 @@
 #include <vector>
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include "KPacket.h"
 #include "KBaseServer.h"
 #include "KMyGameServer.h"
@@ -10,7 +10,7 @@
 void StartupServer()
 {
     KMyGameServer::CreateInstance<KMyGameServer>( 0L );
-    BOOST_ASSERT( _KMyGameServer != nullptr );
+    assert( _KMyGameServer != nullptr );
     _KMyGameServer->SetHwnd( NULL );
 
     const bool isInitialized = _KMyGameServer->Initialize( 0L );

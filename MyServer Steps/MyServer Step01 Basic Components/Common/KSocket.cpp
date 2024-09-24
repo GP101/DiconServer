@@ -36,7 +36,7 @@ void KSocket::SetIoEventHandle( KOverlapped::EIoMode eMode_, HANDLE hEvent_ )
 
 DESTRUCTOR KSocket::~KSocket()
 {
-    BOOST_ASSERT( m_sock == INVALID_SOCKET );
+    assert( m_sock == INVALID_SOCKET );
     CloseSocket();
 }
 

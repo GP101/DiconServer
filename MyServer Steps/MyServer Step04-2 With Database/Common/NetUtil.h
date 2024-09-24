@@ -3,7 +3,7 @@
 #define _WINSOCKAPI_
 #include <Windows.h>
 #include <string>
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <atltime.h>
 #include <boost/format.hpp>
 #include <sstream>

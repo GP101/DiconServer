@@ -11,5 +11,5 @@ public:
     virtual void        OnAcceptConnection() override;
     virtual void        OnCloseSocket() override;
 
-    KSession*           m_pkSession; // qff. must be boost::weak_ptr<KSession>
+    KSession*           m_pkSession; // qff. must be std::weak_ptr<KSession>
 };

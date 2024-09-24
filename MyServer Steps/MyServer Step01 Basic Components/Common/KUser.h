@@ -4,7 +4,7 @@
 
 
 class KUser;
-typedef boost::shared_ptr<KUser> KUserPtr;
+typedef std::shared_ptr<KUser> KUserPtr;
 
 class KUser
     : public KSession

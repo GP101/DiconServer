@@ -7,7 +7,7 @@
 
 
 class KIocpWorkerThread; 
-typedef boost::shared_ptr<KIocpWorkerThread> KIocpWorkerThreadPtr;
+typedef std::shared_ptr<KIocpWorkerThread> KIocpWorkerThreadPtr;
 
 class KIocpWorkerThread : public KThread
 {

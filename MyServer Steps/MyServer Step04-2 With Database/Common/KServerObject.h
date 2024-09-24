@@ -39,10 +39,10 @@ public:
     int                 GetRefCount() const { return shared_from_this().use_count() - 1; }
 
     template<typename T>
-    boost::shared_ptr<T>
+    std::shared_ptr<T>
                         GetSharedPtr()
                         {
-                            return boost::static_pointer_cast<T>( shared_from_this() );
+                            return std::static_pointer_cast<T>( shared_from_this() );
                         }
 
 protected:

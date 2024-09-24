@@ -13,7 +13,7 @@ DESTRUCTOR KDbLayer::~KDbLayer()
 bool KDbLayer::Initialize( DWORD dwParam_ ) 
 {
     KDbLayerInitParam* pInitParam = reinterpret_cast<KDbLayerInitParam*>( dwParam_ );
-    BOOST_ASSERT( pInitParam != nullptr );
+    assert( pInitParam != nullptr );
 
     m_pfnCreateThread = pInitParam->pfnCreateDbThread;
 

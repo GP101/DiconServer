@@ -28,7 +28,7 @@ VIRTUAL bool KThreadManager::Initialize( DWORD nThreadNum_ )
     KCriticalSectionLock lock( m_csVecThread );
 
     for( UINT i = 0; i < nThreadNum_; ++i ) {
-        boost::shared_ptr<KThread> spThread( CreateThread() );
+        std::shared_ptr<KThread> spThread( CreateThread() );
         spThread->SetThreadManager( this );
         m_vecThread.push_back( spThread );
     }
@@ -39,7 +39,7 @@ VIRTUAL bool KThreadManager::Initialize( DWORD nThreadNum_ )
 VIRTUAL void KThreadManager::Finalize()
 {
     m_workQueue.Finalize();
-    BOOST_ASSERT( m_vecThread.empty() == true );
+    assert( m_vecThread.empty() == true );
 }
 
 void KThreadManager::BeginAllThread()
@@ -83,7 +83,7 @@ void KThreadManager::SetNumThread( size_t nThreadNum_ )
     }
     else { // increase # of threads
         for( size_t i = m_vecThread.size(); i < nThreadNum_; ++i ) {
-            boost::shared_ptr<KThread> spThread( CreateThread() );
+            std::shared_ptr<KThread> spThread( CreateThread() );
             spThread->SetThreadManager( this );
             spThread->BeginThread();
             m_vecThread.push_back( spThread );

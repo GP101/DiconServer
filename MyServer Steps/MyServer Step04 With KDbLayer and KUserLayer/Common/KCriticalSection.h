@@ -1,5 +1,5 @@
 #pragma once
-#include <boost/assert.hpp>
+#include <cassert>
 #include "KGen.h"
 
 
@@ -15,7 +15,7 @@ class KCriticalSectionLock
 public:
     CONSTRUCTOR         KCriticalSectionLock( const CRITICAL_SECTION& cs ) : m_pcs( &cs )
                         {
-                            BOOST_ASSERT( m_pcs != nullptr );
+                            assert( m_pcs != nullptr );
                             EnterCriticalSection( (LPCRITICAL_SECTION)m_pcs );
                         }
 

@@ -4,7 +4,7 @@
 #include <boost/log/sinks.hpp>
 #include <boost/log/sources/logger.hpp>
 #include <boost/utility/empty_deleter.hpp>
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <iostream>
 #include "KGlobalSingleton.h"
 #include "KGen.h"
@@ -39,9 +39,9 @@ public:
                         lg;
 
 private:
-    boost::shared_ptr<text_sink> 
+    std::shared_ptr<text_sink> 
                         sink;
-    boost::shared_ptr<std::ostream>
+    std::shared_ptr<std::ostream>
                         stream;
 };
 
