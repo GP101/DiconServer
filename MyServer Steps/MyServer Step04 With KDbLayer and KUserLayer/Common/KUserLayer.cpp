@@ -4,9 +4,9 @@
 #include "KBaseServer.h"
 #include "KCriticalSection.h"
 #include <sstream>
-#include <boost/bind/bind.hpp>
+#include <functional>
 
-using namespace boost::placeholders;
+using namespace std::placeholders;
 
 CONSTRUCTOR KUserLayer::KUserLayer()
 {

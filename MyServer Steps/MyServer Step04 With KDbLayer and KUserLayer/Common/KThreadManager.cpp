@@ -1,8 +1,8 @@
 #include "KGen.h"
 #include "KThreadManager.h"
-#include <boost/bind/bind.hpp>
+#include <functional>
 
-using namespace boost::placeholders;
+using namespace std::placeholders;
 
 CONSTRUCTOR KThreadManager::KThreadManager() 
 {
@@ -46,7 +46,7 @@ void KThreadManager::BeginAllThread()
 {
     KCriticalSectionLock lock( m_csVecThread );
 
-    std::for_each( m_vecThread.begin(), m_vecThread.end(), boost::bind( &KThread::BeginThread, _1 ) );
+    std::for_each( m_vecThread.begin(), m_vecThread.end(), std::bind( &KThread::BeginThread, _1 ) );
 }
 
 void KThreadManager::EndAllThread()
@@ -57,7 +57,7 @@ void KThreadManager::EndAllThread()
         return;
 
     std::for_each( m_vecThread.begin(), m_vecThread.end()
-        , boost::bind( &KThread::EndThread, _1, 3000 ) );
+        , std::bind( &KThread::EndThread, _1, 3000 ) );
 
     BEGIN_LOG( cout, L"waiting termination of all threads" );
 

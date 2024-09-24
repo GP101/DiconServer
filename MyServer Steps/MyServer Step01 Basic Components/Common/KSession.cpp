@@ -5,10 +5,10 @@
 #include "NetUtil.h"
 #include <time.h>
 #include "CommonPacket.h"
-#include <boost/bind/bind.hpp>
+#include <functional>
 #include "KIocp.h"
 
-using namespace boost::placeholders;
+using namespace std::placeholders;
 
 CONSTRUCTOR KSession::KSession()
     : m_bDestroyReserved( false )
@@ -47,7 +47,7 @@ VIRTUAL void KSession::OnDestroy()
 
     // process pending packets.
     if( m_workQueue.GetQueueSize() > 0 )
-        m_workQueue.ProcessPackets( boost::bind( &KSession::OnPacket, this, _1 ) );
+        m_workQueue.ProcessPackets( std::bind( &KSession::OnPacket, this, _1 ) );
 }
 
 void KSession::OnReceiveData( IN std::vector<char>& buffer_ )
@@ -83,7 +83,7 @@ bool KSession::SendPacket( IN const KPacket& packet )
 
 VIRTUAL void KSession::Update(DWORD dwElapsedTime_)
 {
-    m_workQueue.ProcessPackets( boost::bind( &KSession::OnPacket, this, _1 ) );
+    m_workQueue.ProcessPackets( std::bind( &KSession::OnPacket, this, _1 ) );
 
     if( m_bDestroyReserved == true ) {
         VIRTUAL OnDestroy();

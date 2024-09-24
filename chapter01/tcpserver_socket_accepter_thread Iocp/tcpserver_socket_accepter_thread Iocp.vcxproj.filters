@@ -30,9 +30,6 @@
     <ClInclude Include="KThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="KCriticalSection.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="KGen.h">
       <Filter>Header Files</Filter>
     </ClInclude>

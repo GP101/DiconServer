@@ -4,10 +4,10 @@
 #include "KIocpWorkerThread.h"
 #include "KSession.h"
 #include "KGen.h"
-#include <boost/bind/bind.hpp>
+#include <functional>
 #include "KBaseServer.h"
 
-using namespace boost::placeholders;
+using namespace std::placeholders;
 
 void NetSendPacket( int nFlag_, LONGLONG nFrom_, LONGLONG nTo_, KPacketPtr spPacket_ )
 {

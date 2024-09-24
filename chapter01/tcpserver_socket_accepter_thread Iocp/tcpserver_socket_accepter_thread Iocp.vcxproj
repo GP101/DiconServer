@@ -84,7 +84,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="KCriticalSection.h" />
     <ClInclude Include="KGen.h" />
     <ClInclude Include="KGlobalSingleton.h" />
     <ClInclude Include="KIocp.h" />

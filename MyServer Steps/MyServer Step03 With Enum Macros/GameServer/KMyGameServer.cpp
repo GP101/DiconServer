@@ -1,12 +1,12 @@
 #include <WinSock2.h>
-#include <boost/bind/bind.hpp>
+#include <functional>
 #include <sstream>
 #include <iomanip>
 #include "KMyGameServer.h"
 #include "KUser.h"
 #include "KMyUserFsm.h"
 
-using namespace boost::placeholders;
+using namespace std::placeholders;
 
 const wchar_t*  g_szConfigFile = L"config";
 //{{ qff. jintaeks on 2017-09-21_18-57

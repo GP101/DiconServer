@@ -5,9 +5,9 @@
 #include "KThreadManager.h"
 #include "NetUtil.h"
 #include "KNetLayer.h"
-#include <boost/bind/bind.hpp>
+#include <functional>
 
-using namespace boost::placeholders;
+using namespace std::placeholders;
 
 #pragma comment( lib, "ws2_32" )
 
@@ -66,7 +66,7 @@ VIRTUAL void KBaseServer::Finalize()
 
 VIRTUAL void KBaseServer::Update(DWORD dwElapsedTime_)
 {
-    m_workQueue.ProcessPackets( boost::bind( &KBaseServer::OnPacket, this, _1 ) );
+    m_workQueue.ProcessPackets( std::bind( &KBaseServer::OnPacket, this, _1 ) );
 }
 
 void KBaseServer::QueueingPacket( const KPacketPtr& spPacket )
