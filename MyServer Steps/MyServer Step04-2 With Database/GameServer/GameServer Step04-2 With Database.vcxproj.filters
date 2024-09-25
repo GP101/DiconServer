@@ -54,6 +54,9 @@
     <ClCompile Include="..\Common\NetUtil.cpp">
       <Filter>Common</Filter>
     </ClCompile>
+    <ClCompile Include="..\Common\easylogging++.cc">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KMyGameServer.h" />

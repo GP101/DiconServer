@@ -8,6 +8,7 @@
 #include "KUser.h"
 #include "KMyUserFsm.h"
 #include "KUserLayer.h"
+#include "KLog.h"
 
 using namespace std::placeholders;
 
@@ -27,6 +28,7 @@ KUserPtr CreateUser()
     spUser.reset( new KUser() );
     g_spClientUser = spUser;
     g_spClientUser->Initialize( 0L );
+    BEGIN_LOG(clog, L"") << END_LOG;
     return spUser;
 }
 
@@ -116,4 +118,5 @@ VIRTUAL void KMyGameServer::Update(DWORD dwElapsedTime_)
 
 void KMyGameServer::OnPacket( IN KPacket* pkPacket )
 {
+    KLOG << "Received Packet " << pkPacket->m_usPacketId;
 }

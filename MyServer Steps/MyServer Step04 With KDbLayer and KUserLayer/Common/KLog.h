@@ -1,50 +1,22 @@
-#pragma once
+// to use this header, easylogging++.cc must be included to the project. 20240925_jintaeks
 
-#include <boost/log/common.hpp>
-#include <boost/log/sinks.hpp>
-#include <boost/log/sources/logger.hpp>
-#include <boost/utility/empty_deleter.hpp>
-#include <memory>
-#include <iostream>
-#include "KGlobalSingleton.h"
 #include "KGen.h"
+#include "easylogging++.h"
 
-class KLog : public KGlobalSingleton<KLog>
-{
-    typedef boost::log::sinks::asynchronous_sink<boost::log::sinks::text_ostream_backend> text_sink;
+//INITIALIZE_EASYLOGGINGPP // declare once at main() source file. 20240925_jintaeks
 
-public:
-                        KLog() {
-                            Initialize();
-                        }
+#define KLOG            LOG(INFO)
+#define KLOG_NAME(a)    LOG(INFO) << VAR_NAME( a ) << "=" << a
 
-                        ~KLog() {
-                            Finalize();
-                        }
+// to use this header, easylogging++.cc must be included to the project. 20240925_jintaeks
 
-    void                Initialize()
-                        {
-                            sink = boost::make_shared<text_sink>();
-                            stream.reset( &std::clog, boost::empty_deleter{} );
-                            sink->locked_backend()->add_stream( stream );
-                            boost::log::core::get()->add_sink( sink );
-                        }
+/** @example
 
-    void                Finalize()
-                        {
-                            sink->flush();
-                        }
+    #include "KLog.h"
 
-    boost::log::sources::logger 
-                        lg;
+    INITIALIZE_EASYLOGGINGPP // declare once at main() source file. 20240925_jintaeks
 
-private:
-    std::shared_ptr<text_sink> 
-                        sink;
-    std::shared_ptr<std::ostream>
-                        stream;
-};
-
-#define _KLog           KLog::Singleton()
-#define KLOG            BOOST_LOG( _KLog.lg )
-#define KLOG_NAME(a)    VAR_NAME( a ) << "=" << a
+    void main() {
+        // ...
+    }
+*/

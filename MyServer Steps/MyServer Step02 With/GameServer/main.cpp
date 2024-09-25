@@ -1,9 +1,13 @@
 #include <vector>
 #include <memory>
+#include "KLog.h"
 #include "KPacket.h"
 #include "KBaseServer.h"
 #include "KMyGameServer.h"
 #include "conio.h"
+#include "KLog.h"
+
+INITIALIZE_EASYLOGGINGPP // declare once at main() source file. 20240925_jintaeks
 
 #define ESC_KEY         27
 
