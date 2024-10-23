@@ -2,7 +2,6 @@
 #include "KGen.h"
 #include <ws2tcpip.h>
 #include <vector>
-#include <boost/utility.hpp>
 #include "KOverlapped.h"
 #include "KCriticalSection.h"
 

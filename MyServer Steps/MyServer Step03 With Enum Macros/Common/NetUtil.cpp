@@ -1,7 +1,7 @@
 #include "NetUtil.h"
 #include <ws2tcpip.h>
 #include <string>
-#include <boost/random.hpp>
+#include <random>
 #include "KCriticalSection.h"
 #include <DbgHelp.h>
 
@@ -12,11 +12,13 @@ namespace NetUtil
 {
     wchar_t WSAMsg[256] = { 0 };
 
-    boost::mt19937 rng;
-    boost::uniform_int<DWORD> uint32( 1, UINT_MAX );
-    boost::uniform_int<LONGLONG> uint40( 1, 0x000000ffffffffff );
-    boost::variate_generator<boost::mt19937&, boost::uniform_int<DWORD> > die32( rng, uint32 );
-    boost::variate_generator<boost::mt19937&, boost::uniform_int<LONGLONG> > die40( rng, uint40 );
+    auto dice40()
+    {
+        static std::uniform_int<LONGLONG> distr{ 1, 0x000000ffffffffff };
+        static std::random_device device;
+        static std::mt19937 engine{ device() };
+        return distr(engine);
+    }
 
     KCriticalSection m_cs;
 }
@@ -95,7 +97,7 @@ const char* NetUtil::CalcIp( DWORD dwIP )
 LONGLONG NetUtil::GetTempUid()
 {
     KCriticalSectionLock lock( m_cs );
-    return die40() | (LONGLONG) 0x1 << 62;
+    return dice40() | (LONGLONG) 0x1 << 62;
 }
 
 // get executable filename

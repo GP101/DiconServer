@@ -5,7 +5,6 @@
 #include <string>
 #include <memory>
 #include <atltime.h>
-#include <boost/format.hpp>
 #include <sstream>
 
 

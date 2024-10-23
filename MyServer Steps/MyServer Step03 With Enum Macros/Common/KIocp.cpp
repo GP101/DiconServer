@@ -4,7 +4,7 @@
 #include "KIocpWorkerThread.h"
 #include <functional>
 #undef max
-#include <boost/random.hpp>
+#include <random>
 
 using namespace std::placeholders;
 
@@ -81,14 +81,14 @@ void KIocp::DeleteCompletionKey( KSocket* pkSockObj_ )
 
 DWORD KIocp::GenNewCompletionKey() const
 {
-    static boost::mt19937 rng;
-    static boost::uniform_int<DWORD> uint32( 1, UINT_MAX );
-    static boost::variate_generator<boost::mt19937&, boost::uniform_int<DWORD> > dice( rng, uint32 );
+    static std::uniform_int<unsigned int> dice{ 1, UINT_MAX };
+    static std::random_device device;
+    static std::mt19937 engine{ device() };
 
     CSLOCK( m_csSockObj )
     {
         while( true ) {
-            const DWORD dwCompletionKey = dice();
+            const DWORD dwCompletionKey = dice(engine);
             if( m_mapSocketObject.find( dwCompletionKey ) == m_mapSocketObject.end() )
                 return dwCompletionKey;
         }
