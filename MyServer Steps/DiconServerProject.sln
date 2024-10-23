@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameServer Step04-2 With Da
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameServer Step05 With KUser", "MyServer Step05 With KUser\GameServer\GameServer Step05 With KUser.vcxproj", "{6A046630-7390-493A-8768-657D5001DFD6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameServer Step06 With KMy", "MyServer Step06 With KMy\GameServer\MyServer Step06 With KMyUser.vcxproj", "{2413E1C2-F753-477B-B928-8714C7BB6E3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -45,6 +47,10 @@ Global
 		{6A046630-7390-493A-8768-657D5001DFD6}.Debug|x86.Build.0 = Debug|Win32
 		{6A046630-7390-493A-8768-657D5001DFD6}.Release|x86.ActiveCfg = Release|Win32
 		{6A046630-7390-493A-8768-657D5001DFD6}.Release|x86.Build.0 = Release|Win32
+		{2413E1C2-F753-477B-B928-8714C7BB6E3A}.Debug|x86.ActiveCfg = Debug|Win32
+		{2413E1C2-F753-477B-B928-8714C7BB6E3A}.Debug|x86.Build.0 = Debug|Win32
+		{2413E1C2-F753-477B-B928-8714C7BB6E3A}.Release|x86.ActiveCfg = Release|Win32
+		{2413E1C2-F753-477B-B928-8714C7BB6E3A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
