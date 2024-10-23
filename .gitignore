@@ -55,3 +55,4 @@ MyServer Steps/MyServer Step01 Basic Components/MyServer.sdf
 /chapter05/overlapped/overlappedServerCompletionRoutine/*.user
 /chapter05/select/selectclient/*.user
 /chapter05/select/selectserver/*.user
+/MyServer Steps/MyServer Step01 Basic Components/GameServer/*.log
