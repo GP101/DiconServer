@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KThreadManager" Collapsed="true">
+    <Position X="14.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQCAAAACAQAQAAAiCAACAAgCgAAAAAAACAAkAAA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KThreadManager.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_vecThread2" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KThread" Collapsed="true">
+    <Position X="11.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kABIACAAAAAAAAAQIAAAgAgAAAAgAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KUserLayer" Collapsed="true">
+    <Position X="9.25" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAAgACCAAAAAAgAAAA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KUserLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KSocketAccepterThread" Collapsed="true">
+    <Position X="10.75" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAiCABAAAAAAAAAAAAgAAAAQAAAAAAEAAAAAgBACA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KSocketAccepterThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KIocpWorkerThread" Collapsed="true">
+    <Position X="12.25" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAACAAAAAAAAAAAABAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KIocpWorkerThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KMyDbThread" Collapsed="true">
+    <Position X="13.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAgAAAAAAABRAAAAAAAgAAAAAAAAAgAAAA=</HashCode>
+      <FileName>KMyDBThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

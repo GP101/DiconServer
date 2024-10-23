@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameServer Step01 Basic Components", "MyServer Step01 Basic Components\GameServer\GameServer Step01.vcxproj", "{3028DBC3-7BA6-42C5-90E6-26D8B5D51762}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameServer Step04 With KDbLayer and KUserLayer", "MyServer Step04 With KDbLayer and KUserLayer\GameServer\GameServer Step04 With KDbLayer and KUserLayer.vcxproj", "{C1B7D043-D5E9-476B-9F57-EDEB5C2601E8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameServer Step04-2 With Database", "MyServer Step04-2 With Database\GameServer\GameServer Step04-2 With Database.vcxproj", "{E392E11B-7BF9-4A99-8CFA-06CB35FBC948}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameServer Step05 With KUser", "MyServer Step05 With KUser\GameServer\GameServer Step05 With KUser.vcxproj", "{6A046630-7390-493A-8768-657D5001DFD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E392E11B-7BF9-4A99-8CFA-06CB35FBC948}.Debug|x86.Build.0 = Debug|Win32
 		{E392E11B-7BF9-4A99-8CFA-06CB35FBC948}.Release|x86.ActiveCfg = Release|Win32
 		{E392E11B-7BF9-4A99-8CFA-06CB35FBC948}.Release|x86.Build.0 = Release|Win32
+		{6A046630-7390-493A-8768-657D5001DFD6}.Debug|x86.ActiveCfg = Debug|Win32
+		{6A046630-7390-493A-8768-657D5001DFD6}.Debug|x86.Build.0 = Debug|Win32
+		{6A046630-7390-493A-8768-657D5001DFD6}.Release|x86.ActiveCfg = Release|Win32
+		{6A046630-7390-493A-8768-657D5001DFD6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

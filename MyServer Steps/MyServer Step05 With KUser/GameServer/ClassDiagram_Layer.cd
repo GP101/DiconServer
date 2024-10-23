@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KUserLayer" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAAgACCAAAAAAgAAAA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KUserLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KBaseServer" Collapsed="true">
+    <Position X="10.25" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AASoAQAACCAAAQgRABQADAggAACAoAIEAAAAgAEBCYA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KBaseServer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KBaseSingleton&lt;T&gt;" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KBaseSingleton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KDbLayer" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAARAAAAAAAQAAAgAAgAAIAAAAgAAAAAAAAAAAACA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KDbLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KGlobalSingleton&lt;T&gt;" Collapsed="true">
+    <Position X="13" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAAgAAAAAAA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KGlobalSingleton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KIocp" Collapsed="true">
+    <Position X="13" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAQAAAQAAAQAEAAAASAgBAABBgAAEAAgAAhAQAAA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KIocp.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KNetLayer" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAQAAIAAAAAAAAAAgoAAAAAACIAAAAAA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KNetLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KServerObject" Collapsed="true">
+    <Position X="6.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAAAAAAAAAAAYAAABAAAAAEAAAAAAAAAIUAAABAA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KServerObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KSession" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASRACEABAAAAUBQBCABDAAAggACgIAABAACCAAAAAA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KSession.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KUser" Collapsed="true">
+    <Position X="5.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAABAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KUser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KUserManager" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAQASAAAQQBAAyAECAACAAAAAQAAgHABUAAAgBAEAAA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KUserManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KWorkQueue" Collapsed="true">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAQAQAAAAAAAAAAgEkAAAAAEQAAAAACA=</HashCode>
+      <FileName>C:\Svn\jintaeks\DiconServer\MyServer Steps\MyServer Step05 With KUser\Common\KWorkQueue.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KMyGameServer" Collapsed="true">
+    <Position X="10.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAAAAAAAAAQAAAAAAhAAAAAAAgAAAAAAAAQAACAA=</HashCode>
+      <FileName>KMyGameServer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
