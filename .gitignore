@@ -56,3 +56,14 @@ MyServer Steps/MyServer Step01 Basic Components/MyServer.sdf
 /chapter05/select/selectclient/*.user
 /chapter05/select/selectserver/*.user
 /MyServer Steps/MyServer Step01 Basic Components/GameServer/*.log
+/MyServer Steps/MyServer Step04 With KDbLayer and KUserLayer/GameServer/Release
+/MyServer Steps/MyServer Step04-2 With Database/GameServer/Release
+/MyServer Steps/MyServer Step03 With Enum Macros/GameServer/Release
+/MyServer Steps/MyServer Step01 Basic Components/GameServer/Release
+/MyServer Steps/MyServer Step02 With/GameServer/Release
+/MyServer Steps/MyServer Step03 With Enum Macros/GameServer/*.log
+/MyServer Steps/MyServer Step04-2 With Database/GameServer/*.log
+/MyServer Steps/MyServer Step05 With KUser/GameServer/Debug
+/MyServer Steps/MyServer Step05 With KUser/GameServer/Release
+/MyServer Steps/MyServer Step06 With KMy/GameServer/Debug
+/MyServer Steps/MyServer Step06 With KMy/GameServer/Release

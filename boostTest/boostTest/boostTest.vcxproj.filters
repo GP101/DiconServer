@@ -158,5 +158,65 @@
     <ClCompile Include="boostTest_session00.cpp">
       <Filter>References Files</Filter>
     </ClCompile>
+    <ClCompile Include="cereal KPacket01.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cereal KPacket02.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cereal KPacket03.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cereal KPacket04.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cereal KPacket05.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cereal KPacket06.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cereal00_const-operator.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cereal01_basic.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualStudio2017Console thread step01.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualStudio2017Console thread step02 mutex.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualStudio2017Console thread step02-2 guard.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualStudio2017Console thread step02-3 synchronized.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualStudio2017Console thread step03 lock_guard.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualStudio2017Console thread step04 raise a sync issue.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualStudio2017Console thread step05 condition variable.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualStudio2017Console thread step06 thread_local.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_random01.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_random02.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_timer01.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_timer02.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
