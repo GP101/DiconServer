@@ -67,3 +67,4 @@ MyServer Steps/MyServer Step01 Basic Components/MyServer.sdf
 /MyServer Steps/MyServer Step05 With KUser/GameServer/Release
 /MyServer Steps/MyServer Step06 With KMy/GameServer/Debug
 /MyServer Steps/MyServer Step06 With KMy/GameServer/Release
+/MyServer Steps/MyServer Step06 With KMy/GameServer/*.log
