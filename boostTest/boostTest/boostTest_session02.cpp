@@ -55,7 +55,7 @@ private:
     KQueue m_kQueue;
 };
 
-class KMySession : public KSession
+class KUser : public KSession
 {
 public:
     virtual void OnPacket(KPacketPtr spPacket)
@@ -66,6 +66,6 @@ public:
 
 int main()
 {
-    KMySession session;
+    KUser session;
     session.Update();
 }

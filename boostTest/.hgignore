@@ -1,0 +1,6 @@
+syntax: glob
+.vs/*
+boostTest/Debug/*
+Debug/*
+boostTest/Release/*
+Release/*

@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <ostream>
+#include <streambuf>
 #include <cereal/archives/binary.hpp>
 #include <cereal/types/string.hpp>
 
@@ -57,19 +59,39 @@ public:
 };//class KPacket
 #pragma pack( pop )
 
+struct VectorStreamBuf : std::streambuf
+{
+	std::vector<char>& out;
+
+	explicit VectorStreamBuf(std::vector<char>& v) : out(v) {}
+
+	std::streamsize xsputn(const char* s, std::streamsize n) override
+	{
+		out.insert(out.end(), s, s + n);
+		return n;
+	}
+
+	int overflow(int ch) override
+	{
+		if (ch != traits_type::eof())
+			out.push_back(static_cast<char>(ch));
+		return ch;
+	}
+};
+
 template <class T>
 void KPacket::SetData(unsigned int nSenderUID, unsigned short usPacketId, const T& data_)
 {
 	m_nSenderUid = nSenderUID;
 	m_usPacketId = usPacketId;
 
-	std::stringstream   ss;
-	cereal::BinaryOutputArchive oa(ss); // Create an output archive
-	oa(data_);
+	m_buffer.clear();
 
-	std::string& str = ss.str();
-	m_buffer.reserve(str.size());
-	m_buffer.assign(str.begin(), str.end());
+	VectorStreamBuf vb(m_buffer);
+	std::ostream os(&vb);
+
+	cereal::BinaryOutputArchive oa(os); // Create an output archive
+	oa(data_);
 }//KPacket::SetData()
 
 

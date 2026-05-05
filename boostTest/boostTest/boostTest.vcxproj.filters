@@ -50,9 +50,6 @@
     <ClCompile Include="boostTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="boostTest_serialization.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
     <ClCompile Include="boostTest_CriticalSection RAII.cpp">
       <Filter>References Files</Filter>
     </ClCompile>
@@ -134,12 +131,6 @@
     <ClCompile Include="boostTest Fsm05 with enum.cpp">
       <Filter>References Files</Filter>
     </ClCompile>
-    <ClCompile Include="boostTest_serialization01.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest_serialization02.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
     <ClCompile Include="boostTest read write binary data.cpp">
       <Filter>References Files</Filter>
     </ClCompile>
@@ -216,6 +207,21 @@
       <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_timer02.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_serialization01_Archive.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_serialization02_operators.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_serialization03_InOutArchive.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_serialization04.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="boostTest_serialization05.cpp">
       <Filter>References Files</Filter>
     </ClCompile>
   </ItemGroup>

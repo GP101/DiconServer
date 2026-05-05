@@ -1,25 +1,24 @@
 #include <stdio.h>
 #include <cereal/archives/binary.hpp>
-#include <cereal/types/string.hpp>
-#include <cereal/types/vector.hpp>
 #include <sstream>
+#include <memory>
 
 #pragma pack(push,1)
-
+struct KData;
+typedef std::shared_ptr<KData> KDataPtr;
 struct KData
 {
     char    m_cData;
     float   m_fData;
-
-    template <typename Archive>
-    void serialize( Archive& ar, const unsigned int version )
-    {
-        ar & m_cData;
-        ar & m_fData;
-    }
 };
-
 #pragma pack(pop)
+
+template <typename Archive>
+void serialize(Archive& ar, KData& a, const unsigned int version)
+{
+    ar& a.m_cData;
+    ar& a.m_fData;
+}
 
 void main()
 {

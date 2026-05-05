@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <cereal/archives/binary.hpp>
-#include <cereal/types/string.hpp>
-#include <cereal/types/vector.hpp>
 #include <sstream>
+#include <memory>
 
 #pragma pack(push,1)
-
+struct KData;
+typedef std::shared_ptr<KData> KDataPtr;
 struct KData
 {
     char    m_cData;
@@ -18,7 +18,6 @@ struct KData
         ar & m_fData;
     }
 };
-
 #pragma pack(pop)
 
 void main()
