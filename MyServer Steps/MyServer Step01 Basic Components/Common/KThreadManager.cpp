@@ -1,5 +1,6 @@
 #include "KGen.h"
 #include "KThreadManager.h"
+#include <algorithm>
 #include <functional>
 
 using namespace std::placeholders;

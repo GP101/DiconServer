@@ -90,7 +90,7 @@ bool KSocket::SendData( const char* szData_, int iSize_ )
         DWORD dwWrite = 0;
 
         m_wsaBuf.buf = m_pBufferSend;
-        m_wsaBuf.len = MAX_PACKET_SIZE;
+        m_wsaBuf.len = iSize_;
         int ret = ::WSASend( m_sock, &m_wsaBuf, 1, &dwWrite
             , 0, NULL, NULL );
 

@@ -74,27 +74,6 @@
     <ClCompile Include="boostTest_KGlobalSingleton.cpp">
       <Filter>References Files</Filter>
     </ClCompile>
-    <ClCompile Include="boostTest KPacket01.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest KPacket02.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest KPacket03.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest KPacket04.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest KPacket05.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest KPacket06.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boostTest KPacket07.cpp">
-      <Filter>References Files</Filter>
-    </ClCompile>
     <ClCompile Include="boostTest_noncopyable.cpp">
       <Filter>References Files</Filter>
     </ClCompile>
@@ -222,6 +201,30 @@
       <Filter>References Files</Filter>
     </ClCompile>
     <ClCompile Include="boostTest_serialization05.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bind-step01_functor.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bind-step02_bind2nd.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bind-step03_std_bind.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bind-step04_std_bind.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bind-step05_my_binder.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bind-step06_my_placeholder.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bind-step07_std_function.cpp">
+      <Filter>References Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualStudio2017Console thread step07 unsafe_capture.cpp">
       <Filter>References Files</Filter>
     </ClCompile>
   </ItemGroup>

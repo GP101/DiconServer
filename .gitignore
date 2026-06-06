@@ -68,3 +68,52 @@ MyServer Steps/MyServer Step01 Basic Components/MyServer.sdf
 /MyServer Steps/MyServer Step06 With KMy/GameServer/Debug
 /MyServer Steps/MyServer Step06 With KMy/GameServer/Release
 /MyServer Steps/MyServer Step06 With KMy/GameServer/*.log
+/MyServer Steps/.hg
+/boostTest/.hg
+/chapter01/.hg
+/chapter05/.hg
+/chapter01/Release
+/chapter01/tcpclient/Release
+/chapter01/tcpserver/Release
+/chapter01/tcpserver_socket_accepter_thread Iocp/Release
+/chapter01/udpreceiver/Release
+/chapter01/udpsender/Release
+/chapter02/.hg
+/chapter02/Release
+/chapter02/enumcat/Release
+/chapter03/.hg
+/chapter03/Release
+/chapter03/resolve/Release
+/chapter04/.hg
+/chapter05/Release
+/chapter05/WSAAsyncSelect/AsyncSelectServer/Release
+/chapter05/WSAEventSelect/EventSelectServer/Release
+/chapter05/iocp/iocpServer/Release
+/chapter05/overlapped/overlappedServer/Release
+/chapter05/select/selectclient/Release
+/chapter05/select/selectserver/Release
+/chapter05/overlapped/overlappedServerCompletionRoutine/Release
+/chapter05/blocking/blockingserver/Release
+/chapter01/tcpserver_socket_accepter_thread/Release
+/MyServer Steps/.hgignore
+/chapter01/*.hgignore
+/chapter03/.hgignore
+/chapter04/*.hgignore
+/chapter05/.hgignore
+/chapter02/.hgignore
+/MyServer Steps/desktop.ini
+/MyServer Steps/MyServer Step01 Basic Components/.vs
+/MyServer Steps/MyServer Step06 With KMy/.vs
+/MyServer Steps/MyServer Step05 With KUser/.vs
+/MyServer Steps/MyServer Step04-2 With Database/.vs
+/MyServer Steps/MyServer Step04 With KDbLayer and KUserLayer/.vs
+/MyServer Steps/MyServer Step03 With Enum Macros/.vs
+/MyServer Steps/MyServer Step02 With/.vs
+/MyServer Steps/MyServer Step01 Basic Components/GameServer/.vs
+/MyServer Steps/MyServer Step02 With/GameServer/.vs
+/MyServer Steps/MyServer Step03 With Enum Macros/GameServer/.vs
+/MyServer Steps/MyServer Step04 With KDbLayer and KUserLayer/GameServer/.vs
+/MyServer Steps/MyServer Step05 With KUser/GameServer/.vs
+/MyServer Steps/MyServer Step06 With KMy/GameServer/.vs
+/MyServer Steps/MyServer Step04-2 With Database/GameServer/.vs
+/MyServer Steps/MyServer Step02 With/GameServer/*.log

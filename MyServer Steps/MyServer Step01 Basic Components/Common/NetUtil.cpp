@@ -14,7 +14,7 @@ namespace NetUtil
 
     auto dice40()
     {
-        static std::uniform_int<LONGLONG> distr{ 1, 0x000000ffffffffff };
+        static std::uniform_int_distribution<unsigned int> distr(1, UINT_MAX);
         static std::random_device device;
         static std::mt19937 engine{ device() };
         return distr(engine);
@@ -48,10 +48,24 @@ void NetUtil::FinalizeWinsock()
 
 const wchar_t* NetUtil::GetWsaMsg()
 {
-    FormatMessageW( FORMAT_MESSAGE_FROM_SYSTEM, NULL, ::WSAGetLastError()
-        , GetSystemDefaultLangID()/*MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT)*/
-        , WSAMsg, MAX_PATH, NULL );
-    WSAMsg[wcslen( WSAMsg ) - 1] = L'\0'; // remove new line character by adding EOS mark.
+    DWORD len = FormatMessageW(
+        FORMAT_MESSAGE_FROM_SYSTEM,
+        NULL,
+        ::WSAGetLastError(),
+        GetSystemDefaultLangID()/*MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT)*/,
+        WSAMsg,
+        static_cast<DWORD>(sizeof(WSAMsg) / sizeof(WSAMsg[0])),
+        NULL);
+
+    if (len == 0) {
+        WSAMsg[0] = L'\0';
+        return WSAMsg;
+    }
+
+    // Trim trailing CR/LF characters inserted by FormatMessage
+    while (len > 0 && (WSAMsg[len - 1] == L'\n' || WSAMsg[len - 1] == L'\r')) {
+        WSAMsg[--len] = L'\0';
+    }
 
     return WSAMsg;
 }

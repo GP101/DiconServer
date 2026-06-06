@@ -2,7 +2,7 @@
 #include "KIocpWorkerThread.h"
 #include "KGen.h"
 #include "KIocp.h"
-
+#include <chrono>
 
 CONSTRUCTOR KIocpWorkerThread::KIocpWorkerThread()
 {

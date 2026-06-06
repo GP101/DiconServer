@@ -14,7 +14,7 @@ namespace NetUtil
 
     auto dice40()
     {
-        static std::uniform_int<LONGLONG> distr{ 1, 0x000000ffffffffff };
+        static std::uniform_int_distribution<unsigned int> distr(1, UINT_MAX);
         static std::random_device device;
         static std::mt19937 engine{ device() };
         return distr(engine);

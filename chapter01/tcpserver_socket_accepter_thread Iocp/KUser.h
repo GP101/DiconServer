@@ -2,7 +2,6 @@
 #include "KGen.h"
 #include "KSocket.h"
 
-
 class KUser;
 typedef std::shared_ptr<KUser> KUserPtr;
 class KUser : public noncopyable
@@ -14,6 +13,7 @@ public:
         delete m_pSocket;
     }
     KSocket*            GetKSocket() { return m_pSocket; }
+    void                SendText(const char* text);
 
 private:
     KSocket*            m_pSocket;

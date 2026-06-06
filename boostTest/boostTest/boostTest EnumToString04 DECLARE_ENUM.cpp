@@ -63,7 +63,7 @@ void main()
 {
 	KPacketLogin        login;
 	{
-		login.m_login = "jintaeks\0hello";
+		login.m_login = "jintaeks";
 		login.m_password = "hello world";
 		login.m_id = 99;
 		login.m_age = 48;

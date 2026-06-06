@@ -15,17 +15,36 @@ enum EPacketId
     #include "Packet.inc" 
 };
 
-
-/// @see    https://stackoverflow.com/questions/8815164/c-wrapping-vectorchar-with-istream
-template<typename CharT, typename TraitsT = std::char_traits<CharT> >
-class vectorwrapbuf : public std::basic_streambuf<CharT, TraitsT>
+struct VectorStreamBuf : std::streambuf
 {
-public:
-                        vectorwrapbuf( IN std::vector<CharT>& vec )
-                        {
-                            setg( vec.data(), vec.data(), vec.data() + vec.size() );
-                        }
-};//class vectorwrapbuf
+    std::vector<char>& out;
+
+    explicit VectorStreamBuf(std::vector<char>& v) : out(v) {}
+
+    std::streamsize xsputn(const char* s, std::streamsize n) override
+    {
+        out.insert(out.end(), s, s + n);
+        return n;
+    }
+
+    int overflow(int ch) override
+    {
+        if (ch != traits_type::eof())
+            out.push_back(static_cast<char>(ch));
+        return ch;
+    }
+};
+
+struct VectorIStreamBuf : std::streambuf
+{
+    explicit VectorIStreamBuf(const std::vector<char>& v)
+    {
+        // cereal::BinaryInputArchive reads bytes; treat as raw memory.
+        char* begin = const_cast<char*>(v.data());
+        char* end = begin + v.size();
+        setg(begin, begin, end);
+    }
+};
 
 
 #pragma pack( push, 1 )
@@ -59,19 +78,19 @@ protected:
 #pragma pack( pop )
 
 
-template<typename T>
-void KPacket::SetData( unsigned short usPacketId, const T& data_ )
+template <class T>
+void KPacket::SetData(unsigned short usPacketId, const T& data_)
 {
-    //m_nSenderUid = nSenderUid;
+    m_nSenderUid = 0;// nSenderUID;
     m_usPacketId = usPacketId;
 
-    std::stringstream   ss;
-    cereal::BinaryOutputArchive oa(ss); // Create an output archive
-    oa << data_;
+    m_buffer.clear();
 
-    std::string& str = ss.str();
-    m_buffer.reserve( str.size() );
-    m_buffer.assign( str.begin(), str.end() );
+    VectorStreamBuf vb(m_buffer);
+    std::ostream os(&vb);
+
+    cereal::BinaryOutputArchive oa(os); // Create an output archive
+    oa(data_);
 }//KPacket::SetData()
 
 template <typename Archive>
@@ -82,53 +101,38 @@ void serialize(Archive& ar, KPacket& a, const unsigned int version)
     ar& a.m_buffer;
 }//serialize()
 
-template<typename T>
-bool BufferToPacket( IN std::vector<char>& buffer, OUT T& data )
+template <typename T>
+void BufferToPacket(IN std::stringstream& ss_, OUT T& packet_)
 {
-    if( buffer.empty() == true )
-        return false;
-
-    // alternative (slow) implementation. jintaeks on 2017-08-24_20-08
-    //std::stringstream ss;
-    //std::copy(buffer.begin(), buffer.end(), std::ostream_iterator<char>(ss));
-    //cereal::BinaryInputArchive ia(ss);
-    //ia >> data;
-
-    vectorwrapbuf<char> databuf(buffer);
-    std::istream is(&databuf);
-    cereal::BinaryInputArchive ia(is);
-    ia >> data;
-    return true;
+    cereal::BinaryInputArchive ia(ss_); // Create an input archive
+    ia(packet_);
 }//BufferToPacket()
 
-
-template<typename T>
-void BufferToPacket( IN std::stringstream& ss_, OUT T& packet_ )
+template <typename T>
+void BufferToPacket(IN std::vector<char>& buffer, OUT T& data)
 {
-    cereal::BinaryInputArchive ia(ss_);
-    ia >> packet_;
+    VectorIStreamBuf vb(buffer);
+    std::istream is(&vb);
+    cereal::BinaryInputArchive ia(is); // Create an input archive
+    ia(data);
 }//BufferToPacket()
 
-
 template<typename T>
-void PacketToBuffer( IN T& packet_, OUT std::vector<char>& buffer_ )
+void PacketToBuffer(IN T& packet_, OUT std::stringstream& ss_)
 {
-    std::stringstream   ss;
-    cereal::BinaryOutputArchive oa(ss);
-    oa << packet_;
-
-    // set [out] parameter
-    std::string& str = ss.str();
-    buffer_.reserve( str.size() );
-    buffer_.assign( str.begin(), str.end() );
+    cereal::BinaryOutputArchive oa(ss_); // Create an output archive
+    oa(packet_);
 }//PacketToBuffer()
 
-
 template<typename T>
-void PacketToBuffer( IN T& packet_, OUT std::stringstream& ss_ )
+void PacketToBuffer(IN T& packet_, OUT std::vector<char>& buffer_)
 {
-    cereal::BinaryOutputArchive oa(ss_);
-    oa << packet_;
+    buffer_.clear();
+    VectorStreamBuf vb(buffer_);
+    std::ostream os(&vb);
+
+    cereal::BinaryOutputArchive oa(os); // Create an output archive
+    oa(packet_);
 }//PacketToBuffer()
 
 #define DECLARE_PACKET( id )      struct K##id

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37012.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameServer Step04-2 With Database", "GameServer\GameServer Step04-2 With Database.vcxproj", "{E392E11B-7BF9-4A99-8CFA-06CB35FBC948}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E392E11B-7BF9-4A99-8CFA-06CB35FBC948}.Debug|x86.ActiveCfg = Debug|Win32
+		{E392E11B-7BF9-4A99-8CFA-06CB35FBC948}.Debug|x86.Build.0 = Debug|Win32
+		{E392E11B-7BF9-4A99-8CFA-06CB35FBC948}.Release|x86.ActiveCfg = Release|Win32
+		{E392E11B-7BF9-4A99-8CFA-06CB35FBC948}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7AADC37-F3DF-4F3F-B974-D5A3F22D7319}
+	EndGlobalSection
+EndGlobal
